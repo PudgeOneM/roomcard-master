@@ -1,0 +1,21 @@
+{
+    "project_type": "javascript",
+
+    "debugMode" : 0,
+    "showFPS" : false,
+    "frameRate" : 15,
+    "noCache" : true,
+    "id" : "gameCanvas",
+    "renderMode" : 1,
+    "engineDir":"frameworks/cocos2d-html5",
+
+    "modules": [ "core", "audio","shape-nodes", "clipping-nodes", "actions", 
+    "progress-timer", "labels", "text-input", "menus", "editbox",
+    "ccui", "gui", "ccbreader"],
+
+    "jsList" : [
+
+    ]
+}
+
+

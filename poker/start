@@ -1,0 +1,27 @@
+#!/bin/bash
+function run(){
+
+	cd `dirname $0`
+	if [ $cmdIdx = 1 ] 
+	then 
+		for line in `cat tools/bin/.pid`
+		do
+		    sudo kill $line
+		done
+		echo '浏览器输入localhost访问'
+		sudo  'tools/bin/www'
+	elif [ $cmdIdx = 2 ]
+	then 
+		if  [ ! -n "$para1" ] ;then
+			'startTools/clearSvn' $(pwd)"/publish"
+		else
+			'startTools/clearSvn' $para1
+		fi
+	fi
+
+}
+read -p "选择命令 
+1:开启网页工具
+2:清除.svn
+" cmdIdx para1
+run
