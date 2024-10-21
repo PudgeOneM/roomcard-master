@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>centeredOrigin</key>
+	<false/>
+	<key>currentResolution</key>
+	<integer>0</integer>
+	<key>currentSequenceId</key>
+	<integer>0</integer>
+	<key>fileType</key>
+	<string>CocosBuilder</string>
+	<key>fileVersion</key>
+	<integer>4</integer>
+	<key>guides</key>
+	<array/>
+	<key>jsControlled</key>
+	<false/>
+	<key>nodeGraph</key>
+	<dict>
+		<key>baseClass</key>
+		<string>CCNode</string>
+		<key>children</key>
+		<array>
+			<dict>
+				<key>baseClass</key>
+				<string>CCLabelTTF</string>
+				<key>children</key>
+				<array/>
+				<key>customClass</key>
+				<string></string>
+				<key>displayName</key>
+				<string>CCLabelTTF</string>
+				<key>memberVarAssignmentName</key>
+				<string></string>
+				<key>memberVarAssignmentType</key>
+				<integer>0</integer>
+				<key>properties</key>
+				<array>
+					<dict>
+						<key>name</key>
+						<string>position</string>
+						<key>type</key>
+						<string>Position</string>
+						<key>value</key>
+						<array>
+							<real>50</real>
+							<real>50</real>
+							<integer>4</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>anchorPoint</string>
+						<key>type</key>
+						<string>Point</string>
+						<key>value</key>
+						<array>
+							<real>0.5</real>
+							<real>0.5</real>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>scale</string>
+						<key>type</key>
+						<string>ScaleLock</string>
+						<key>value</key>
+						<array>
+							<real>1</real>
+							<real>1</real>
+							<false/>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>ignoreAnchorPointForPosition</string>
+						<key>type</key>
+						<string>Check</string>
+						<key>value</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontName</string>
+						<key>type</key>
+						<string>FontTTF</string>
+						<key>value</key>
+						<string>Helvetica</string>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontSize</string>
+						<key>type</key>
+						<string>FloatScale</string>
+						<key>value</key>
+						<array>
+							<real>24</real>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>dimensions</string>
+						<key>type</key>
+						<string>Size</string>
+						<key>value</key>
+						<array>
+							<real>100</real>
+							<real>100</real>
+							<integer>1</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>horizontalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>verticalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>string</string>
+						<key>type</key>
+						<string>Text</string>
+						<key>value</key>
+						<string>新昌麻将规则
+麻将牌数共136张，没有财神，没有花牌，有万、条、筒，东南西北、中发白。不能吃、只能碰杠。可放冲，自摸计四倍。分为两种模式缺一须自摸，缺一可放炮
+ 
+牌型
+缺一即筒、条、万三色中缺其中任一色就可胡牌，有风无风没有关系。
+缺三即筒、条、万三色中只有其中一色，但带有风。
+缺五即筒、条、万三色中只有其中一色，并且无风。
+缺十即只有风。（可以碰在外面）。
+ 
+特殊规则及胡法
+1、分为两种玩法：改为缺一须自摸、缺一可放炮。
+2、不可吃，可碰、杠；可以放冲、自摸。
+3、可以选择性碰牌，碰后不能补杠、暗杠。
+4、暗杠需要亮一张牌出来。
+5、有抢杠胡，算杠的人放冲分。
+6、荒庄留14张牌，不管有没有明暗杠都留14张牌。
+7、荒庄杠分正常算。
+8、杠分只算明杠、暗杠，补杠不算，且杠的玩家必须缺一以上牌型才计分。
+9、与庄有关的计分都得翻倍。
+10、点炮三家都要扣分，所扣分数与点炮玩家相同。
+11、荒庄的时候该局有明暗杠则下家坐庄，无明暗杠则连庄。
+ 
+计分规则
+缺一 放冲1分自摸4分（不管自摸放冲，每家均付）
+缺三 放冲3分自摸12分（不管自摸放冲，每家均付）
+缺一 放冲5分自摸20分（不管自摸放冲，每家均付）
+缺一 放冲10分自摸40分（不管自摸放冲，每家均付）
+所有根庄有关的分均翻倍。
+杠分
+每一个明杠，在原来的基础上加上放冲胡牌的得分（明杠玩家是缺几牌型听牌，就计缺几牌型的放冲，假如缺三、五、十未听牌计缺一放冲分；满足缺一牌型就计缺一杠分；每家均扣分）
+每一个暗杠，在原来的基础上加上自摸胡牌的得分（明杠玩家是缺几牌型听牌，就计缺几牌型的自摸，假如缺三、五、十未听牌计缺一自摸分；满足缺一牌型就计缺一杠分不管听不听牌；每家均扣分）</string>
+					</dict>
+				</array>
+				<key>selected</key>
+				<true/>
+			</dict>
+		</array>
+		<key>customClass</key>
+		<string></string>
+		<key>displayName</key>
+		<string>CCNode</string>
+		<key>memberVarAssignmentName</key>
+		<string></string>
+		<key>memberVarAssignmentType</key>
+		<integer>0</integer>
+		<key>properties</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>contentSize</string>
+				<key>type</key>
+				<string>Size</string>
+				<key>value</key>
+				<array>
+					<real>400</real>
+					<real>2250</real>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>anchorPoint</string>
+				<key>type</key>
+				<string>Point</string>
+				<key>value</key>
+				<array>
+					<real>0.0</real>
+					<real>0.0</real>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>scale</string>
+				<key>type</key>
+				<string>ScaleLock</string>
+				<key>value</key>
+				<array>
+					<real>1</real>
+					<real>1</real>
+					<false/>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>ignoreAnchorPointForPosition</string>
+				<key>type</key>
+				<string>Check</string>
+				<key>value</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>notes</key>
+	<array/>
+	<key>resolutions</key>
+	<array>
+		<dict>
+			<key>centeredOrigin</key>
+			<false/>
+			<key>ext</key>
+			<string>iphone</string>
+			<key>height</key>
+			<integer>0</integer>
+			<key>name</key>
+			<string>iPhone</string>
+			<key>scale</key>
+			<real>1</real>
+			<key>width</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>sequences</key>
+	<array>
+		<dict>
+			<key>autoPlay</key>
+			<true/>
+			<key>callbackChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>10</integer>
+			</dict>
+			<key>chainedSequenceId</key>
+			<integer>-1</integer>
+			<key>length</key>
+			<real>10</real>
+			<key>name</key>
+			<string>Default Timeline</string>
+			<key>offset</key>
+			<real>0.0</real>
+			<key>position</key>
+			<real>0.0</real>
+			<key>resolution</key>
+			<real>30</real>
+			<key>scale</key>
+			<real>128</real>
+			<key>sequenceId</key>
+			<integer>0</integer>
+			<key>soundChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>9</integer>
+			</dict>
+		</dict>
+	</array>
+	<key>stageBorder</key>
+	<integer>3</integer>
+</dict>
+</plist>

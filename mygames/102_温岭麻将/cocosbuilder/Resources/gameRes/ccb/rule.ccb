@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>centeredOrigin</key>
+	<false/>
+	<key>currentResolution</key>
+	<integer>0</integer>
+	<key>currentSequenceId</key>
+	<integer>0</integer>
+	<key>fileType</key>
+	<string>CocosBuilder</string>
+	<key>fileVersion</key>
+	<integer>4</integer>
+	<key>guides</key>
+	<array/>
+	<key>jsControlled</key>
+	<false/>
+	<key>nodeGraph</key>
+	<dict>
+		<key>baseClass</key>
+		<string>CCNode</string>
+		<key>children</key>
+		<array>
+			<dict>
+				<key>baseClass</key>
+				<string>CCLabelTTF</string>
+				<key>children</key>
+				<array/>
+				<key>customClass</key>
+				<string></string>
+				<key>displayName</key>
+				<string>CCLabelTTF</string>
+				<key>memberVarAssignmentName</key>
+				<string></string>
+				<key>memberVarAssignmentType</key>
+				<integer>0</integer>
+				<key>properties</key>
+				<array>
+					<dict>
+						<key>name</key>
+						<string>position</string>
+						<key>type</key>
+						<string>Position</string>
+						<key>value</key>
+						<array>
+							<real>50</real>
+							<real>50</real>
+							<integer>4</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>anchorPoint</string>
+						<key>type</key>
+						<string>Point</string>
+						<key>value</key>
+						<array>
+							<real>0.5</real>
+							<real>0.5</real>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>scale</string>
+						<key>type</key>
+						<string>ScaleLock</string>
+						<key>value</key>
+						<array>
+							<real>1</real>
+							<real>1</real>
+							<false/>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>ignoreAnchorPointForPosition</string>
+						<key>type</key>
+						<string>Check</string>
+						<key>value</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontName</string>
+						<key>type</key>
+						<string>FontTTF</string>
+						<key>value</key>
+						<string>Helvetica</string>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontSize</string>
+						<key>type</key>
+						<string>FloatScale</string>
+						<key>value</key>
+						<array>
+							<real>24</real>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>dimensions</string>
+						<key>type</key>
+						<string>Size</string>
+						<key>value</key>
+						<array>
+							<real>100</real>
+							<real>100</real>
+							<integer>1</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>horizontalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>verticalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>string</string>
+						<key>type</key>
+						<string>Text</string>
+						<key>value</key>
+						<string>基本规则
+1.用牌：东南西北中发白各4张，花牌春、夏、秋、冬、梅、兰、菊、竹各一张，总共144张牌。
+2.创建游戏房间选择玩法，顶碰、平挫搓。
+  顶碰：发牌前，庄家、闲家可发起顶碰操作（顶碰后，最终胡数=胡数*顶碰倍数，胡数上限500胡）
+（1）结算双方，都没顶碰   不翻倍 
+（2）结算双方，一家顶碰   *2
+（3）结算双方，都顶碰     *4 
+（4）如果连庄，保持上把的顶碰状态，未顶的有顶起的权利
+  平挫搓：即没有顶碰操作。
+3.轮庄：第一局为系统随机定庄，庄家胡牌庄家连庄；闲家胡牌或者流局，则庄家下家坐庄。
+4.财神：抓完牌后面的第一张牌为财神，财神可以打出，但不能被吃、碰、胡。
+5.翻牌：摸到白板跟花牌时，可直接杠出
+6.闹闹：财神是花牌或中发白时，为闹闹。闹闹时，中发为翻牌。
+7.能吃、能碰、能杠、能自摸、能放冲。
+8.明杠（直杠）：手里有3张相同的牌，别人打这张牌杠。
+  明杠（补杠）：已碰牌，摸进来这张牌杠。
+  暗杠：摸进来4张相同的牌杠。
+9.不能选择性碰牌或胡牌，如果后面胡数比之前的大，可以胡。
+10.抢杠胡：补杠时，别人刚好胡补杠的那张牌。
+11.流局：剩8堆荒庄，如果牌尾是零张则不算堆。
+
+基本胡型
+(1)11、123、123、123、123、123
+(2)11、123、123、123、123、111(1111 ，下同 )
+(3)11、123、123、123、111、111
+(4)11、123、123、111、111、111
+(5)11、123、111、111、111、111
+(6)11、111、111、111、111、111
+注：11是对子，123是顺子，111是刻子
+
+基础牌点
+翻牌：4胡，白板跟花牌，闹闹时，中发也算
+暗杠：普通暗杠16胡，幺九暗杠32胡（1、9跟字牌，下同）
+明杠：普通明杠8胡，幺九暗杠16胡
+暗刻：普通暗刻4胡，幺九暗刻8胡（未胡者算分时，可由财神替代）
+碰：普通碰2胡，幺九碰4胡
+对子：2胡，门风、红中、发财对（未胡者算分时，不能用财神替代）
+捉鬼：2胡，例：1234万胡1万或4万或者1114胡4万
+靠柄：2胡，例：12万胡3万、89万胡7万，只能胡3或7
+嵌档：2胡，例：13万胡2万
+自摸：2胡
+注：捉鬼、靠柄、嵌档、自摸只有胡牌的人财神算胡数
+
+番数
+翻牌：1番，每个白板，闹闹时每个中发，对应自家的每个花牌。
+字牌：1番，红中发财和自家门风碰杠暗刻（未胡者算分时，可由财神替代而成）。
+四风全齐：13番，由东南西北风全是刻子（杠）+将组成的牌。
+清一色：3番，由同一种花色组成的胡牌，如全是万牌。
+混一色：2番，由字牌和万筒条其中的一种花色组成的胡牌。
+对对胡：2番，由5个刻子（杠）+将组成的牌。
+旁胡：1番，由顺子+将组成的牌，自摸才算旁胡。
+无财神：1番，没有财神胡牌。
+2财神：1番，有两个财神胡牌。
+财神归位：1番，财神作牌面本身，如2万财神，作2万。
+自摸财神：1番，自己摸进来财神胡牌。
+财神双归位：辣子，两个财神都作牌面本身。
+财神脚骨：辣子，由两个财神作将胡牌。
+抢杠胡：1番，胡别人杠的牌（先碰后杠）。
+杠上开花：1番，杠后摸进来的牌，刚好是自己胡的牌。
+海底捞月：1番，摸牌到最后一张胡牌。
+天胡：辣子，发完牌后庄家直接胡牌。
+地胡：辣子，发完牌后，庄家第一次出牌，闲家胡。
+注：除了翻牌、字牌番数，其他番数都是胡牌者才能计。辣子直接按500胡算。
+
+
+胡牌规则
+1.符合胡牌的牌型即可胡牌。
+2.特殊胡牌：全部自己摸到下列其中一种则直接胡牌，按辣子计算
+   （1）春、夏、秋、冬
+   （2）梅、兰、竹、菊
+   （3）4个红中
+   （4）4个白板
+   （5）4个发财
+   （6）4个自家门风
+   （7）3个财神
+3.	没有一炮多响。
+结算规则
+1.	非胡牌者每家给胡牌者（20胡+基础牌点）* 2^n （n为番数）的积分（个位数进位，即总共54胡计60胡）
+2.	非胡牌者之间先计算自己的积分 基础分*2^n （n为番数），个位数进位后，再根据彼此的差值给对应的积分
+3.	流局不结算
+
+包牌
+1.	桌面有清一色牌型的（吃碰三次以上），放炮者包牌
+2.	未听牌，打生张的中、发，放炮者包牌
+	差二手听牌打生张中或发，包牌
+	差一手听牌，只有一个孤张时，要先打孤张，否则打生张中或发包牌
+	差一手听牌，没有孤张或两张孤张时，打生张中或发，不包牌
+	听牌后，如果胡型是捉鬼，只要可胡胡型里有旁胡，打生张中发就不包，没有旁胡就包牌
+	听牌后，如果可胡胡型里没有捉鬼，打生张中发就不包
+3.	最后16留后，倒数第13张开始，打生张，放炮者包牌
+4.	所有人最后一次出牌，有财神没有打财神，放炮者包牌
+5.	最后16留后，倒数第13张开始，明杠后打熟张，放炮者包牌
+
+包牌结算
+1.	包牌者给胡牌者3*（20胡+基础牌点）* 2^n （n为番数）的积分，其他两家非胡牌者不需要扣分
+2.	非胡牌者之间的结算，也都由包牌者出，且包牌者按0胡计。
+
+</string>
+					</dict>
+				</array>
+				<key>selected</key>
+				<true/>
+			</dict>
+		</array>
+		<key>customClass</key>
+		<string></string>
+		<key>displayName</key>
+		<string>CCNode</string>
+		<key>memberVarAssignmentName</key>
+		<string></string>
+		<key>memberVarAssignmentType</key>
+		<integer>0</integer>
+		<key>properties</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>contentSize</string>
+				<key>type</key>
+				<string>Size</string>
+				<key>value</key>
+				<array>
+					<real>400</real>
+					<real>4950</real>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>anchorPoint</string>
+				<key>type</key>
+				<string>Point</string>
+				<key>value</key>
+				<array>
+					<real>0.0</real>
+					<real>0.0</real>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>scale</string>
+				<key>type</key>
+				<string>ScaleLock</string>
+				<key>value</key>
+				<array>
+					<real>1</real>
+					<real>1</real>
+					<false/>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>ignoreAnchorPointForPosition</string>
+				<key>type</key>
+				<string>Check</string>
+				<key>value</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>notes</key>
+	<array/>
+	<key>resolutions</key>
+	<array>
+		<dict>
+			<key>centeredOrigin</key>
+			<false/>
+			<key>ext</key>
+			<string>iphone</string>
+			<key>height</key>
+			<integer>0</integer>
+			<key>name</key>
+			<string>iPhone</string>
+			<key>scale</key>
+			<real>1</real>
+			<key>width</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>sequences</key>
+	<array>
+		<dict>
+			<key>autoPlay</key>
+			<true/>
+			<key>callbackChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>10</integer>
+			</dict>
+			<key>chainedSequenceId</key>
+			<integer>-1</integer>
+			<key>length</key>
+			<real>10</real>
+			<key>name</key>
+			<string>Default Timeline</string>
+			<key>offset</key>
+			<real>0.0</real>
+			<key>position</key>
+			<real>0.0</real>
+			<key>resolution</key>
+			<real>30</real>
+			<key>scale</key>
+			<real>128</real>
+			<key>sequenceId</key>
+			<integer>0</integer>
+			<key>soundChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>9</integer>
+			</dict>
+		</dict>
+	</array>
+	<key>stageBorder</key>
+	<integer>3</integer>
+</dict>
+</plist>

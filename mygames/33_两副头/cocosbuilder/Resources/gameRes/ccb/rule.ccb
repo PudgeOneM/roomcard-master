@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>centeredOrigin</key>
+	<false/>
+	<key>currentResolution</key>
+	<integer>0</integer>
+	<key>currentSequenceId</key>
+	<integer>0</integer>
+	<key>fileType</key>
+	<string>CocosBuilder</string>
+	<key>fileVersion</key>
+	<integer>4</integer>
+	<key>guides</key>
+	<array/>
+	<key>jsControlled</key>
+	<false/>
+	<key>nodeGraph</key>
+	<dict>
+		<key>baseClass</key>
+		<string>CCNode</string>
+		<key>children</key>
+		<array>
+			<dict>
+				<key>baseClass</key>
+				<string>CCLabelTTF</string>
+				<key>children</key>
+				<array/>
+				<key>customClass</key>
+				<string></string>
+				<key>displayName</key>
+				<string>CCLabelTTF</string>
+				<key>memberVarAssignmentName</key>
+				<string></string>
+				<key>memberVarAssignmentType</key>
+				<integer>0</integer>
+				<key>properties</key>
+				<array>
+					<dict>
+						<key>name</key>
+						<string>position</string>
+						<key>type</key>
+						<string>Position</string>
+						<key>value</key>
+						<array>
+							<real>50</real>
+							<real>50</real>
+							<integer>4</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>anchorPoint</string>
+						<key>type</key>
+						<string>Point</string>
+						<key>value</key>
+						<array>
+							<real>0.5</real>
+							<real>0.5</real>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>scale</string>
+						<key>type</key>
+						<string>ScaleLock</string>
+						<key>value</key>
+						<array>
+							<real>1</real>
+							<real>1</real>
+							<false/>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>ignoreAnchorPointForPosition</string>
+						<key>type</key>
+						<string>Check</string>
+						<key>value</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontName</string>
+						<key>type</key>
+						<string>FontTTF</string>
+						<key>value</key>
+						<string>Helvetica</string>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontSize</string>
+						<key>type</key>
+						<string>FloatScale</string>
+						<key>value</key>
+						<array>
+							<real>24</real>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>dimensions</string>
+						<key>type</key>
+						<string>Size</string>
+						<key>value</key>
+						<array>
+							<real>100</real>
+							<real>100</real>
+							<integer>1</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>horizontalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>verticalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>string</string>
+						<key>type</key>
+						<string>Text</string>
+						<key>value</key>
+						<string>1.边报规则： ABCD四位玩家玩牌摸牌结束后，第一局随机一位玩家（例如A）展示一张牌（例如红桃8），另外一位有红桃8的玩家（例如B）则玩家AB为朋友，CD为朋友。如果非第一局，则上局上游玩家展示牌，找朋友，规则一样。
+2.独报规则：所有玩家摸牌结束后，如果玩家A想一打三，可以选择独报，那么A玩家打玩家BCD
+讨赏：牌局过程中，任意玩家（A）摸到特殊牌型可加指定分，则另外三位玩家（BCD）需减指定分3.非全讨A.	三个王；   		+3分，-1分B.	四个王；			+6分，-2分C.	任意6个； 		+3分，-1分D.	任意7个； 		+6分，-2分E.	任意8个； 		+9分，-3分4.全讨A.	一对小王；  		+3分，-1分B.	一对大王；  		+3分，-1分C.	三个王；	  		+6分，-2分D.	四个王（一起出）；	+15分，-5分E.	四个王（分开出）；	+12分，-4分F.	四红（不可拆）；	+3分，-1分G.	四黑（不可拆）；			+3分，-1分H.	任意6个（可拆）；			+3分，-1分I.	任意7个（可拆）；			+6分，-2分J.	任意8个（可拆）；			+9分，-3分K.	任意2个（5个以上炸弹）；	+3分，-1分	不含大小王L.	任意3个（5个以上炸弹）；	+6分，-2分	不含大小王M.	任意4个（5个以上炸弹）；	+12分，-4分	不含大小王N.	任意4个（4个以上炸弹）；	+3分，-1分	不含大小王O.	任意5个（4个以上炸弹）；	+6分，-2分	不含大小王
+5.
+(1)	单张：任意单张可出								例如：9(2)	对子：任意单个对子可出							例如：KK(3)	三张：任意相同三张可出，不可带					例如：444(4)	炸弹：任意相同4张（及以上）牌型					例如：7777(5)	连队：任意连续3对（及以上）牌型，不含对2			例如：JJQQKK(6)	顺子：任意连续5张（及以上）牌型，不含单张2		例如：3456789(7)	大小王：小王=￥，大王=$A.	单张小王可压单张2B.	单张大王单张小王C.	一对小王可压一对2D.	一对大王可压一对小王E.	最后两张牌为￥$，可一起出，其他时候不可当成对子打出E．单张大小王可抵任意单张牌					例如：345￥7$F．四张王（￥￥$$）不带任何牌一起出的时候是最大的炸弹， 例如：￥￥$$ &gt; 2222222H．四张王带了任何牌（￥￥$$4）为普通炸 例如：33333&lt;￥￥$$4&lt;55555</string>
+					</dict>
+				</array>
+				<key>selected</key>
+				<true/>
+			</dict>
+		</array>
+		<key>customClass</key>
+		<string></string>
+		<key>displayName</key>
+		<string>CCNode</string>
+		<key>memberVarAssignmentName</key>
+		<string></string>
+		<key>memberVarAssignmentType</key>
+		<integer>0</integer>
+		<key>properties</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>contentSize</string>
+				<key>type</key>
+				<string>Size</string>
+				<key>value</key>
+				<array>
+					<real>400</real>
+					<real>1500</real>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>anchorPoint</string>
+				<key>type</key>
+				<string>Point</string>
+				<key>value</key>
+				<array>
+					<real>0.0</real>
+					<real>0.0</real>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>scale</string>
+				<key>type</key>
+				<string>ScaleLock</string>
+				<key>value</key>
+				<array>
+					<real>1</real>
+					<real>1</real>
+					<false/>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>ignoreAnchorPointForPosition</string>
+				<key>type</key>
+				<string>Check</string>
+				<key>value</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>notes</key>
+	<array/>
+	<key>resolutions</key>
+	<array>
+		<dict>
+			<key>centeredOrigin</key>
+			<false/>
+			<key>ext</key>
+			<string>iphone</string>
+			<key>height</key>
+			<integer>0</integer>
+			<key>name</key>
+			<string>iPhone</string>
+			<key>scale</key>
+			<real>1</real>
+			<key>width</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>sequences</key>
+	<array>
+		<dict>
+			<key>autoPlay</key>
+			<true/>
+			<key>callbackChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>10</integer>
+			</dict>
+			<key>chainedSequenceId</key>
+			<integer>-1</integer>
+			<key>length</key>
+			<real>10</real>
+			<key>name</key>
+			<string>Default Timeline</string>
+			<key>offset</key>
+			<real>0.0</real>
+			<key>position</key>
+			<real>0.0</real>
+			<key>resolution</key>
+			<real>30</real>
+			<key>scale</key>
+			<real>128</real>
+			<key>sequenceId</key>
+			<integer>0</integer>
+			<key>soundChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>9</integer>
+			</dict>
+		</dict>
+	</array>
+	<key>stageBorder</key>
+	<integer>3</integer>
+</dict>
+</plist>

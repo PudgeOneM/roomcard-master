@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>centeredOrigin</key>
+	<false/>
+	<key>currentResolution</key>
+	<integer>0</integer>
+	<key>currentSequenceId</key>
+	<integer>0</integer>
+	<key>fileType</key>
+	<string>CocosBuilder</string>
+	<key>fileVersion</key>
+	<integer>4</integer>
+	<key>guides</key>
+	<array/>
+	<key>jsControlled</key>
+	<false/>
+	<key>nodeGraph</key>
+	<dict>
+		<key>baseClass</key>
+		<string>CCNode</string>
+		<key>children</key>
+		<array>
+			<dict>
+				<key>baseClass</key>
+				<string>CCLabelTTF</string>
+				<key>children</key>
+				<array/>
+				<key>customClass</key>
+				<string></string>
+				<key>displayName</key>
+				<string>CCLabelTTF</string>
+				<key>memberVarAssignmentName</key>
+				<string></string>
+				<key>memberVarAssignmentType</key>
+				<integer>0</integer>
+				<key>properties</key>
+				<array>
+					<dict>
+						<key>name</key>
+						<string>position</string>
+						<key>type</key>
+						<string>Position</string>
+						<key>value</key>
+						<array>
+							<real>50</real>
+							<real>50</real>
+							<integer>4</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>anchorPoint</string>
+						<key>type</key>
+						<string>Point</string>
+						<key>value</key>
+						<array>
+							<real>0.5</real>
+							<real>0.5</real>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>scale</string>
+						<key>type</key>
+						<string>ScaleLock</string>
+						<key>value</key>
+						<array>
+							<real>1</real>
+							<real>1</real>
+							<false/>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>ignoreAnchorPointForPosition</string>
+						<key>type</key>
+						<string>Check</string>
+						<key>value</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontName</string>
+						<key>type</key>
+						<string>FontTTF</string>
+						<key>value</key>
+						<string>Helvetica</string>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontSize</string>
+						<key>type</key>
+						<string>FloatScale</string>
+						<key>value</key>
+						<array>
+							<real>24</real>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>dimensions</string>
+						<key>type</key>
+						<string>Size</string>
+						<key>value</key>
+						<array>
+							<real>100</real>
+							<real>100</real>
+							<integer>1</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>horizontalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>verticalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>string</string>
+						<key>type</key>
+						<string>Text</string>
+						<key>value</key>
+						<string>跑的快经典玩法
+基本规则：
+一、游戏人数：3人
+二、游戏牌数：一副牌去掉大小王、去掉一个A、去掉3个2，共剩48张牌，没人16张牌；一手牌中只有1个2，3个A
+三、出牌顺序：开局首轮由黑桃3玩家首先出牌，且出牌第一手牌必须带有黑桃3，次轮开始由首轮赢牌的玩家坐庄，坐庄玩家最先出牌
+四、牌型
+1、单张：任意一张单牌
+2、顺子：任意5张或者5张以上点数相连的牌。特殊：2是最大的单牌，不能当顺子出
+3、对子：两张同样点数的牌，如：55
+4、连队：2对或者2对以上点数相连的牌，如：5566，556677，55667788
+5、三带二：点数相同的三张牌+两张任何牌（可以带一对牌或者两张单牌），如：33344，33345
+6、飞机带翅膀：两个或者两个以上相连的3张，两个3连可以带2张牌，如：333444+5566或333444+5678，三个3连可以带6张牌，如：333444555+667788或333444555+6789JQ
+7、炸弹：4张点数相同的牌，如5555，KKKK
+8、关春天：有一家牌已经出完，另外一家或者两家1张牌都没有出，此时的状态为关春天
+9、特殊牌型：玩家出牌后，手中只剩下点数相同在3张，如555，如该玩家有优先出牌权，3张可以不带。同样的情况，玩家只能3张带一张，也可以出牌。玩家手中只剩两个3连，如：444555，不带牌，或者带1-4张，都可以出牌。玩家手中只剩下三个3连，如：333444555，不带牌，或者带1-6张牌，都可以出牌。
+10、报警：玩家出牌手中只剩下1张牌，此时的状态为报警。报警的玩家，其上手玩家必须出手中的最大的单牌顶牌。
+11、必接：玩家手中有比上家大的牌，必须出手中比上家大的牌管住
+12、庄家先出牌：游戏由庄家开始出第一轮手牌（开房首局由黑桃3玩家坐庄），牌型可以自由搭配（开房首局第一轮出牌必须带有黑桃3）。
+五、积分规则：
+1个炸弹10分（被炸的两个玩家各扣10分，有炸弹的玩家增加20分）
+炸弹被其他玩家更大在炸弹吃掉，被吃掉在炸弹不计分
+报单不出不进
+关春天：被关春天者剩余牌的张数*2，即扣32分（和炸弹可累加）
+六、创建房间说明
+1、10分钟：游戏进行总时间为10分钟，参与游戏的3个玩家，每人消耗开房钻石100
+2、15分钟：游戏进行总时间为15分钟，参与游戏的3个玩家，每人消耗开房钻石150
+3、20分钟：游戏进行总时间为20分钟，参与游戏的3个玩家，每人消耗开房钻石200
+4、30分钟：游戏进行总时间为30分钟，参与游戏的3个玩家，每人消耗开房钻石300
+特殊情况：如游戏计时已经结束，且最后一手牌局未结束，玩家可继续游戏直至牌局结束</string>
+					</dict>
+				</array>
+				<key>selected</key>
+				<true/>
+			</dict>
+		</array>
+		<key>customClass</key>
+		<string></string>
+		<key>displayName</key>
+		<string>CCNode</string>
+		<key>memberVarAssignmentName</key>
+		<string></string>
+		<key>memberVarAssignmentType</key>
+		<integer>0</integer>
+		<key>properties</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>contentSize</string>
+				<key>type</key>
+				<string>Size</string>
+				<key>value</key>
+				<array>
+					<real>400</real>
+					<real>2350</real>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>anchorPoint</string>
+				<key>type</key>
+				<string>Point</string>
+				<key>value</key>
+				<array>
+					<real>0.0</real>
+					<real>0.0</real>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>scale</string>
+				<key>type</key>
+				<string>ScaleLock</string>
+				<key>value</key>
+				<array>
+					<real>1</real>
+					<real>1</real>
+					<false/>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>ignoreAnchorPointForPosition</string>
+				<key>type</key>
+				<string>Check</string>
+				<key>value</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>notes</key>
+	<array/>
+	<key>resolutions</key>
+	<array>
+		<dict>
+			<key>centeredOrigin</key>
+			<false/>
+			<key>ext</key>
+			<string>iphone</string>
+			<key>height</key>
+			<integer>0</integer>
+			<key>name</key>
+			<string>iPhone</string>
+			<key>scale</key>
+			<real>1</real>
+			<key>width</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>sequences</key>
+	<array>
+		<dict>
+			<key>autoPlay</key>
+			<true/>
+			<key>callbackChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>10</integer>
+			</dict>
+			<key>chainedSequenceId</key>
+			<integer>-1</integer>
+			<key>length</key>
+			<real>10</real>
+			<key>name</key>
+			<string>Default Timeline</string>
+			<key>offset</key>
+			<real>0.0</real>
+			<key>position</key>
+			<real>0.0</real>
+			<key>resolution</key>
+			<real>30</real>
+			<key>scale</key>
+			<real>128</real>
+			<key>sequenceId</key>
+			<integer>0</integer>
+			<key>soundChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>9</integer>
+			</dict>
+		</dict>
+	</array>
+	<key>stageBorder</key>
+	<integer>3</integer>
+</dict>
+</plist>

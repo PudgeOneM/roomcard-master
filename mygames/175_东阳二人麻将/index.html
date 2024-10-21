@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html style="width: 100%; height:100%;">
+<head>
+    <meta charset="utf-8">
+    <title>东阳二人麻将</title>
+    <link rel="icon" type="image/GIF" href="res/publicRes/empty.png"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style>
+        body, canvas, div {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+    </style>
+</head>
+
+<body style="width: 100%; height:100%; padding:0; margin: 0;background: #0b2f2d;overflow:hidden;" >
+
+<div id="focus" style="text-align:center;position:absolute;left:0;top:0;right:0;bottom:0;z-index:10;display:none" onclick="document.getElementById('focus').style.display = 'none'" >
+<img src="res/gameRes/1.png" onload="var h=window.screen.height-60;style='padding-top:'+(h-355)/2/h*100+'%'"/>
+</div>
+
+<div id='d' style="text-align:center;position:absolute;left:0;top:0;right:0;bottom:0;z-index:10;display:none;background: #0b2f2d;">
+</div>
+
+<div style="width: 100%; height:100%;">
+<canvas id="gameCanvas" width="100%" height="100%" ></canvas>
+</div>
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>

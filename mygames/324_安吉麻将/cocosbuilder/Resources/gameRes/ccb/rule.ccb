@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>centeredOrigin</key>
+	<false/>
+	<key>currentResolution</key>
+	<integer>0</integer>
+	<key>currentSequenceId</key>
+	<integer>0</integer>
+	<key>fileType</key>
+	<string>CocosBuilder</string>
+	<key>fileVersion</key>
+	<integer>4</integer>
+	<key>guides</key>
+	<array/>
+	<key>jsControlled</key>
+	<false/>
+	<key>nodeGraph</key>
+	<dict>
+		<key>baseClass</key>
+		<string>CCNode</string>
+		<key>children</key>
+		<array>
+			<dict>
+				<key>baseClass</key>
+				<string>CCLabelTTF</string>
+				<key>children</key>
+				<array/>
+				<key>customClass</key>
+				<string></string>
+				<key>displayName</key>
+				<string>CCLabelTTF</string>
+				<key>memberVarAssignmentName</key>
+				<string></string>
+				<key>memberVarAssignmentType</key>
+				<integer>0</integer>
+				<key>properties</key>
+				<array>
+					<dict>
+						<key>name</key>
+						<string>position</string>
+						<key>type</key>
+						<string>Position</string>
+						<key>value</key>
+						<array>
+							<real>50</real>
+							<real>50</real>
+							<integer>4</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>anchorPoint</string>
+						<key>type</key>
+						<string>Point</string>
+						<key>value</key>
+						<array>
+							<real>0.5</real>
+							<real>0.5</real>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>scale</string>
+						<key>type</key>
+						<string>ScaleLock</string>
+						<key>value</key>
+						<array>
+							<real>1</real>
+							<real>1</real>
+							<false/>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>ignoreAnchorPointForPosition</string>
+						<key>type</key>
+						<string>Check</string>
+						<key>value</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontName</string>
+						<key>type</key>
+						<string>FontTTF</string>
+						<key>value</key>
+						<string>Helvetica</string>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontSize</string>
+						<key>type</key>
+						<string>FloatScale</string>
+						<key>value</key>
+						<array>
+							<real>24</real>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>dimensions</string>
+						<key>type</key>
+						<string>Size</string>
+						<key>value</key>
+						<array>
+							<real>100</real>
+							<real>100</real>
+							<integer>1</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>horizontalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>verticalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>string</string>
+						<key>type</key>
+						<string>Text</string>
+						<key>value</key>
+						<string>游戏规则：
+   万条筒各36张，东南西北中发白各4张，花牌春、夏、秋、冬、梅、兰、竹、菊各一张，总共144张牌。4个人玩，只有庄家可得到十四张牌，其余的人十三张。庄家从牌中选出一张最无用的牌丢出。此时，其他三家都有权力要那张丢出的牌，庄家的下家，有权力吃或者碰那张牌，其他两家则只可碰或杠那张牌。“碰”比“吃”优先。
+ 
+第一次开始游戏系统随机给每位玩家发东南西北其中一张，拿到北的玩家为庄家，由庄家掷骰子，总点数确定抓牌方位，小点数为过牌敦数，从牌墙尾部倒数大点数上面那张牌的下一张为财神，只能自摸。
+流局不换庄家，闲家谁胡牌谁坐庄。
+ 
+牌型(胡牌倍数）
+无财神
+组成胡牌牌型且没有财神   应得分数基础*2
+ 
+13不搭
+必须有三种花色同种花色相隔数字2以上加5个以上单风的牌型  应得分数基础*2
+假如有6个单风的牌型  应得分数基础*7
+ 
+七对
+七对是由七对将牌（可以是字牌和类型牌）组成的胡牌。  应得分数基础*2
+ 
+豪华七对
+是指七对中，有四个一样的牌充当两对牌用。  应得分数基础*4
+ 
+两豪华七对
+是指七对中，有两个“四个一样的牌充当两对牌用”。  应得分数基础*8
+ 
+三豪华七对
+是指七对中，有三个“四个一样的牌充当两对牌用”。  应得分数基础*16  
+ 
+爆头
+玩家在胡牌前，手上有 1 颗财神 + 四比牌的情况。（因为财神可以变做任何的牌，所以下轮玩家摸到任何一张牌便可以胡牌了）则下轮玩家如果自摸胡牌，即为暴头。    应得分数基础*2
+ 
+财飘 （可以空飘）
+玩家在手上拥有 2 颗财神 + 四比牌的情况下可以胡牌，（因为财神可以变做任何的牌，所以下轮玩家摸到任何一张牌便可以胡牌了）该轮玩家不胡牌，把手上的一颗财神打出去，到了下轮再暴头自摸胡牌就叫财飘。（需要连续性，下回合不爆头胡的话就不计财飘）  （应得分数基础+补花个数）*2；如果连续两个财飘再*2
+ 
+杠开
+自己杠牌后摸起的那张牌组成的胡牌即为杠开（其他的麻将中称为杠上花）。
+  应得分数基础*3，连续杠也只计一个
+ 
+杠爆
+在杠开的情况下爆头叫杠爆  应得分数基础*4
+ 
+杠飘
+在杠开的情况下飘财叫杠飘  应得分数基础*8
+ 
+飘杠
+在先飘财再杠开的情况下自摸叫飘杠  应得分数基础*8
+ 
+固定倍数牌型 （多个固定倍数牌型同时存在只计一个）
+天胡
+庄家在开完局后，不用打出牌，已经胡牌，称为天胡。  按胡牌大小10倍计分
+ 
+地胡
+当局非庄家且未出过牌的一家，利用自摸或者他家放炮达到普通或特殊胡牌牌型。  按胡牌大小10倍计分
+ 
+平胡（无花无杠无财神）
+如果赢家胡牌，一张花牌都没有抓到、也没有开杠且没有财神的话，即为平胡。   按胡牌大小10倍计分
+ 
+大吊车
+吃、碰、杠总计4次，并符合普通胡牌牌型（只剩财神单吊不算大吊车）   按胡牌大小10倍计分
+ 
+四财神
+手中有四个财神，就可以胡牌   按胡牌大小10倍计分
+ 
+特殊规则
+1、 可吃、碰、杠；只能自摸。
+2、 同一圈可以选择性碰。
+3、 暗杠不需要把牌翻出来。
+4、 没有承包。
+5、 没有抢杠胡。
+6、 抓完最后一张牌为流局，流局不结算。庄家继续坐庄。（翻开那张牌不会抓到）
+7、 可以吃什么打什么。
+8、 有财神时，不能带财神吃牌或带财神碰牌。
+9、财飘时，财飘的时候，其余三家该轮不能吃、不能碰也不能放冲，只能自摸。下轮如果财飘者摸牌后没胡，则按照原来的规则继续游戏（即该吃该碰照常）；其余玩家可以补杠，不可以暗杠，财飘玩家可以。
+10、胡牌倍数只取最大的。
+11、如果第一轮出牌，庄家出的第一张牌，三家闲家都跟牌，庄家则要奖励每位1个积分
+12、三财神时，必须飘一个财神才能胡牌。
+ 
+积分计算：
+普通情况             积分=基础倍数+补花个数
+有飘财且只有飘财时   积分= （2+补花个数）*2飘财个数  
+或者跟杠开、杠爆同时存在时 积分=（基础倍数+补花个数）*2飘财个数</string>
+					</dict>
+				</array>
+			</dict>
+		</array>
+		<key>customClass</key>
+		<string></string>
+		<key>displayName</key>
+		<string>CCNode</string>
+		<key>memberVarAssignmentName</key>
+		<string></string>
+		<key>memberVarAssignmentType</key>
+		<integer>0</integer>
+		<key>properties</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>contentSize</string>
+				<key>type</key>
+				<string>Size</string>
+				<key>value</key>
+				<array>
+					<real>400</real>
+					<real>4500</real>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>anchorPoint</string>
+				<key>type</key>
+				<string>Point</string>
+				<key>value</key>
+				<array>
+					<real>0.0</real>
+					<real>0.0</real>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>scale</string>
+				<key>type</key>
+				<string>ScaleLock</string>
+				<key>value</key>
+				<array>
+					<real>1</real>
+					<real>1</real>
+					<false/>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>ignoreAnchorPointForPosition</string>
+				<key>type</key>
+				<string>Check</string>
+				<key>value</key>
+				<false/>
+			</dict>
+		</array>
+		<key>selected</key>
+		<true/>
+	</dict>
+	<key>notes</key>
+	<array/>
+	<key>resolutions</key>
+	<array>
+		<dict>
+			<key>centeredOrigin</key>
+			<false/>
+			<key>ext</key>
+			<string>iphone</string>
+			<key>height</key>
+			<integer>0</integer>
+			<key>name</key>
+			<string>iPhone</string>
+			<key>scale</key>
+			<real>1</real>
+			<key>width</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>sequences</key>
+	<array>
+		<dict>
+			<key>autoPlay</key>
+			<true/>
+			<key>callbackChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>10</integer>
+			</dict>
+			<key>chainedSequenceId</key>
+			<integer>-1</integer>
+			<key>length</key>
+			<real>10</real>
+			<key>name</key>
+			<string>Default Timeline</string>
+			<key>offset</key>
+			<real>0.0</real>
+			<key>position</key>
+			<real>0.0</real>
+			<key>resolution</key>
+			<real>30</real>
+			<key>scale</key>
+			<real>128</real>
+			<key>sequenceId</key>
+			<integer>0</integer>
+			<key>soundChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>9</integer>
+			</dict>
+		</dict>
+	</array>
+	<key>stageBorder</key>
+	<integer>3</integer>
+</dict>
+</plist>

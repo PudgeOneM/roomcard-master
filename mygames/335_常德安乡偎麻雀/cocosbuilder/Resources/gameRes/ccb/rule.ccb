@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>centeredOrigin</key>
+	<false/>
+	<key>currentResolution</key>
+	<integer>0</integer>
+	<key>currentSequenceId</key>
+	<integer>0</integer>
+	<key>fileType</key>
+	<string>CocosBuilder</string>
+	<key>fileVersion</key>
+	<integer>4</integer>
+	<key>guides</key>
+	<array/>
+	<key>jsControlled</key>
+	<false/>
+	<key>nodeGraph</key>
+	<dict>
+		<key>baseClass</key>
+		<string>CCNode</string>
+		<key>children</key>
+		<array>
+			<dict>
+				<key>baseClass</key>
+				<string>CCLabelTTF</string>
+				<key>children</key>
+				<array/>
+				<key>customClass</key>
+				<string></string>
+				<key>displayName</key>
+				<string>CCLabelTTF</string>
+				<key>memberVarAssignmentName</key>
+				<string></string>
+				<key>memberVarAssignmentType</key>
+				<integer>0</integer>
+				<key>properties</key>
+				<array>
+					<dict>
+						<key>name</key>
+						<string>position</string>
+						<key>type</key>
+						<string>Position</string>
+						<key>value</key>
+						<array>
+							<real>50</real>
+							<real>50</real>
+							<integer>4</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>anchorPoint</string>
+						<key>type</key>
+						<string>Point</string>
+						<key>value</key>
+						<array>
+							<real>0.5</real>
+							<real>0.5</real>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>scale</string>
+						<key>type</key>
+						<string>ScaleLock</string>
+						<key>value</key>
+						<array>
+							<real>1</real>
+							<real>1</real>
+							<false/>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>ignoreAnchorPointForPosition</string>
+						<key>type</key>
+						<string>Check</string>
+						<key>value</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontName</string>
+						<key>type</key>
+						<string>FontTTF</string>
+						<key>value</key>
+						<string>Helvetica</string>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontSize</string>
+						<key>type</key>
+						<string>FloatScale</string>
+						<key>value</key>
+						<array>
+							<real>24</real>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>dimensions</string>
+						<key>type</key>
+						<string>Size</string>
+						<key>value</key>
+						<array>
+							<real>100</real>
+							<real>100</real>
+							<integer>1</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>horizontalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>verticalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>string</string>
+						<key>type</key>
+						<string>Text</string>
+						<key>value</key>
+						<string>灰色玩家出牌，白色牌堆揭牌
+基本规则：
+常德安乡偎麻雀整幅牌有80张，材质为硬纸片或塑胶片。牌叶子的背面一般为大红或暗红色，正面一般为白色或米白色。牌叶子正面印上楷体的小写“一”到“十”，和大写“壹”到“拾”。其中，“二”、“七”、“十”和“贰”、“柒”、“拾”是红字，其余是黑字。每个字有4张牌。
+参与游戏的人为三人，游戏中的三人一人坐庄，当每一局开始的时候，从整幅牌中拿取一部分，数出22张放到一边作为底牌，另外的58张由庄家开始，轮流起牌，最后由庄家起最后一张。这样，庄家手中有20张，闲家手中有19张。
+庄家轮换：采用抢庄制，流局以后庄家的下家坐庄，否则谁赢谁坐庄。
+牌型介绍：
+对子：手牌中2个相同的牌为1对
+坎：手牌中2个相同的牌为1坎，一坎牌能拆散与其他牌组合但不能拆开打出
+一句话：大小相同并且连续的三张牌组合成为一句话，比如“一”、“二”、“三”为一句话，“壹”、“貳”、“叁”为一句话。
+玩法规则
+碰牌：其他玩家出牌后，自己手牌中有1对，则可以碰牌，碰牌后将牌亮放在桌上
+偎牌：在抓牌时，抓到与手牌中对子相同的牌，则必须将这1坎牌放到桌面上但不允许亮牌。
+吃牌：上家出的牌或者自己揭的牌才能吃，
+过牌：其他玩家打出牌可以碰但选择不碰，其他玩家再出相同牌就不能碰了，上家出的牌或者自己揭的牌可以吃但选择不吃，这张牌就不能再吃了；偎跟胡是可以的
+胡牌：在规则可以胡牌的情况下，并且满足10息，则可以胡牌；胡牌优先级 自己揭牌＞下家＞上家
+名堂规则
+硬息：
+碰   黑字：2息    红字：3息
+偎   黑字：3息    红字：4息
+麻雀 黑字：不算    红字：2息
+团圆 黑字：3息    红字：4息
+转弯 黑字：2息    红字：3息 （不再计麻雀息数）
+ 
+小卓版：
+印胡       每一口印加20息
+多红       10个红字20息，每多一个加20息
+对子和     胡的息数*4
+乌对       胡的息数*8
+乌胡       胡的息数*4
+点胡       胡的息数*3
+满园花     加100个息
+大/小字和  加100个息
+卓胡      加20个息
+姊妹卓    加40个息
+姊妹卓带拖 加80个息
+三乱卓     加60个息
+手牵手     加20个息
+上下五千年 加20个息
+假八碰头   加100个息
+真八碰头   加200个息
+ 
+大卓版：
+印胡       每一口印加30息
+纯印       每一口纯印加150息
+多红       10个红字30息，每多一个加30息
+对子和     胡的息数*8
+乌对       胡的息数*10
+乌胡       胡的息数*6
+点胡       胡的息数*4
+满园花     加 200个息
+大/小字和   加200个息
+卓胡        加30个息
+姊妹卓      加80个息
+三乱卓      加120个息
+姊妹卓带拖  加200个息
+祖孙卓      加300个息
+四乱卓      加300个息
+祖孙卓带拖  加400个息
+海底胡      加50个息
+单吊        加30个息；对子胡单吊加50个息
+八碰头      加400个息
+假八碰头    加200个息
+背靠背      加50个息
+手牵手      加50个息
+龙摆尾      加100个息
+九小对      加100个息，起手十对加150个息
+天胡        加100个息
+无对胡      加100个息
+上下五千年  加50个息
+鸡丁        加150个息
+全求人      加150个息
+ 
+ 
+全名堂版：
+印胡       每一口印加30息
+纯印       每一口纯印加150息
+多红       10个红字30息，每多一个加30息
+对子和     胡的息数*10
+乌对       胡的息数*15
+乌胡       胡的息数*6
+点胡       胡的息数*4
+满园花     加200个息
+大/小字和   加200个息
+卓胡        加40个息
+姊妹卓      加80个息
+三乱卓      加120个息
+姊妹卓带拖  加200个息
+祖孙卓      加300个息
+四乱卓      加300个息
+祖孙卓带拖  加400个息
+海底胡      加50个息
+单吊        加30个息；对子胡单吊加50个息
+八碰头      加400个息
+假八碰头    加200个息
+背靠背      加50个息
+手牵手      加50个息
+龙摆尾      加150个息
+卡威        加50个息
+天胡        加150个息
+全黑        加150个息
+无息        加150个息
+六对红      加150个息
+九对        加150个息
+四边对      加150个息
+全求人      加150个息
+项对        加50个息
+飘对        加50个息
+鸡丁        加150个息
+上下五千年  加50个息
+边坎        加30个息
+真背靠背    加100个息
+凤摆尾      加50个息
+卡胡        加50个息
+ 
+设置逗溜子玩法：溜子为流局的时候每家扣一定分数作为溜子分，当有玩家硬息大于等于18息时，超过18息每一息算一登，每一登拿去固定的溜子分；再牌局结束时再将多余溜子三家均分，平均后还有剩余的溜子则奖励给房主。</string>
+					</dict>
+				</array>
+				<key>selected</key>
+				<true/>
+			</dict>
+		</array>
+		<key>customClass</key>
+		<string></string>
+		<key>displayName</key>
+		<string>CCNode</string>
+		<key>memberVarAssignmentName</key>
+		<string></string>
+		<key>memberVarAssignmentType</key>
+		<integer>0</integer>
+		<key>properties</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>contentSize</string>
+				<key>type</key>
+				<string>Size</string>
+				<key>value</key>
+				<array>
+					<real>400</real>
+					<real>4500</real>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>anchorPoint</string>
+				<key>type</key>
+				<string>Point</string>
+				<key>value</key>
+				<array>
+					<real>0.0</real>
+					<real>0.0</real>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>scale</string>
+				<key>type</key>
+				<string>ScaleLock</string>
+				<key>value</key>
+				<array>
+					<real>1</real>
+					<real>1</real>
+					<false/>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>ignoreAnchorPointForPosition</string>
+				<key>type</key>
+				<string>Check</string>
+				<key>value</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>notes</key>
+	<array/>
+	<key>resolutions</key>
+	<array>
+		<dict>
+			<key>centeredOrigin</key>
+			<false/>
+			<key>ext</key>
+			<string>iphone</string>
+			<key>height</key>
+			<integer>0</integer>
+			<key>name</key>
+			<string>iPhone</string>
+			<key>scale</key>
+			<real>1</real>
+			<key>width</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>sequences</key>
+	<array>
+		<dict>
+			<key>autoPlay</key>
+			<true/>
+			<key>callbackChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>10</integer>
+			</dict>
+			<key>chainedSequenceId</key>
+			<integer>-1</integer>
+			<key>length</key>
+			<real>10</real>
+			<key>name</key>
+			<string>Default Timeline</string>
+			<key>offset</key>
+			<real>0.0</real>
+			<key>position</key>
+			<real>0.0</real>
+			<key>resolution</key>
+			<real>30</real>
+			<key>scale</key>
+			<real>128</real>
+			<key>sequenceId</key>
+			<integer>0</integer>
+			<key>soundChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>9</integer>
+			</dict>
+		</dict>
+	</array>
+	<key>stageBorder</key>
+	<integer>3</integer>
+</dict>
+</plist>

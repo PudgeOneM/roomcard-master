@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>centeredOrigin</key>
+	<false/>
+	<key>currentResolution</key>
+	<integer>0</integer>
+	<key>currentSequenceId</key>
+	<integer>0</integer>
+	<key>fileType</key>
+	<string>CocosBuilder</string>
+	<key>fileVersion</key>
+	<integer>4</integer>
+	<key>guides</key>
+	<array/>
+	<key>jsControlled</key>
+	<false/>
+	<key>nodeGraph</key>
+	<dict>
+		<key>baseClass</key>
+		<string>CCNode</string>
+		<key>children</key>
+		<array>
+			<dict>
+				<key>baseClass</key>
+				<string>CCLabelTTF</string>
+				<key>children</key>
+				<array/>
+				<key>customClass</key>
+				<string></string>
+				<key>displayName</key>
+				<string>CCLabelTTF</string>
+				<key>memberVarAssignmentName</key>
+				<string></string>
+				<key>memberVarAssignmentType</key>
+				<integer>0</integer>
+				<key>properties</key>
+				<array>
+					<dict>
+						<key>name</key>
+						<string>position</string>
+						<key>type</key>
+						<string>Position</string>
+						<key>value</key>
+						<array>
+							<real>50</real>
+							<real>50</real>
+							<integer>4</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>anchorPoint</string>
+						<key>type</key>
+						<string>Point</string>
+						<key>value</key>
+						<array>
+							<real>0.5</real>
+							<real>0.5</real>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>scale</string>
+						<key>type</key>
+						<string>ScaleLock</string>
+						<key>value</key>
+						<array>
+							<real>1</real>
+							<real>1</real>
+							<false/>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>ignoreAnchorPointForPosition</string>
+						<key>type</key>
+						<string>Check</string>
+						<key>value</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontName</string>
+						<key>type</key>
+						<string>FontTTF</string>
+						<key>value</key>
+						<string>Helvetica</string>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontSize</string>
+						<key>type</key>
+						<string>FloatScale</string>
+						<key>value</key>
+						<array>
+							<real>24</real>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>dimensions</string>
+						<key>type</key>
+						<string>Size</string>
+						<key>value</key>
+						<array>
+							<real>100</real>
+							<real>100</real>
+							<integer>1</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>horizontalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>verticalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>string</string>
+						<key>type</key>
+						<string>Text</string>
+						<key>value</key>
+						<string>（1）叫牌
+游戏开始前，系统给每人发牌16张，保留6张底牌。    第一局由拿到红桃4的玩家优先叫牌，如果玩家都没有红桃4，则黑桃4优先叫牌，再者梅花4&gt;方块4&gt;红桃5&gt;黑桃5&gt;梅花5。每家只有1次叫牌的机会，叫牌玩家可以有隔、反、再反三个选项。    玩家叫隔，下家只能叫反或不叫；玩家叫反，下家选项变为再反或不反；玩家不叫，由下家叫牌。
+（2）玩家叫隔，没人反
+玩家叫隔后，没有没叫过牌的玩家或者其他玩家不叫反或不反，该玩家确定为庄家，由该玩家在剩余的6张底牌抽取3张（抽取的3张牌要亮出来给其他玩家看），形成1打2的游戏模式，一家走完游戏结算。
+（3）一家叫隔，一家反有玩家叫隔后，只有一家叫反，由叫反的玩家先抽取6张底牌的3张，剩余3张底牌给叫隔的玩家。由叫隔跟反的玩家形成1对1的游戏模式，反的玩家优先出牌。另外一家当作弃牌处理。
+（4）一家叫隔，两家反    
+第一家叫隔后，第二家叫反，第三家也叫再反，由后叫反的玩家（第二家）先抽取6张底牌的3张，而再反的玩家不需要再抽底牌了（第三家）。由一个叫反的玩家和再反的形成1对1的游戏模式，后叫再反的玩家先出牌。叫隔的玩家当作弃牌处理。
+（5）三家都不叫隔    
+三家都不叫隔，由三家组成争上游模式，即决出最后一名游戏结束。优先叫牌的玩家先出牌。
+（6）游戏开始    
+叫完隔与不隔后，游戏正式开始，玩家根据牌面大小出牌对战，先把牌出完的一方将会获胜。
+
+点数大小：
+出牌只比点数和牌型，不比花色，单张牌的点数从大到小排列如下：大王→小王→3→8→2→A→K……→9→7→6→5→4
+
+牌型大小：
+从大到小排列如下：    天剑→大王3821→小王3821→大炮→小炮→ 顺子 \ 连对 \ 对子 \ 单张    单张，对子，顺子，连对等必须要在牌型相同且张数相同的情况下，单张和对子按“王3821” 点数规则比大小，其它连对和顺子按牌面实际点数比大小。    大小炮、王3821和天剑可以不按牌型直接打其它牌，相同牌型按“王3821”点数规则比大小。
+牌型解释：
+单王：大小王单张可以任意与其它牌型组合打出，和单张组合变成对子，和对子组合变成三炸等。 
+单张：最小为4，最大为大王。
+ 对子：两张同样的点数的牌，最小为44，最大为33（从王3821排列）。 
+连对：至少二对或更多的连续对子，如3344、55667788，2233…JJQQKKAA。 
+单顺：至少三张或更多的点数相连的牌，如A23、56789，234…JQKA。 
+小炮：三张同样点数的牌，如444。 
+大炮：至少四张以上同样点数的牌，如KKKK。 
+小王3821：小王3821，五张牌固定组合，游戏中第三大牌型。 
+大王3821：大王3821，五张牌固定组合，游戏中第二大牌型。 
+天剑：大王小王两张牌固定组合，游戏中最大牌型。
+结算计分方式：
+A玩家     B玩家     C玩家  
+ 隔           不隔       不隔  
+ 2分         1分         1分   （混水）
+ 4分         2分         2分   （清水）
+ 隔           反           不反
+ 4分         4分         0分   （混水）
+ 8分         8分         0分   （清水）
+ 隔           反           再反
+ 0分         8分         8分   （混水）
+ 0分        16分       16分  （清水）
+特殊情况：
+不隔      不隔       不隔    （争上游）头家+1分  末家-1分  二家+0分</string>
+					</dict>
+				</array>
+				<key>selected</key>
+				<true/>
+			</dict>
+		</array>
+		<key>customClass</key>
+		<string></string>
+		<key>displayName</key>
+		<string>CCNode</string>
+		<key>memberVarAssignmentName</key>
+		<string></string>
+		<key>memberVarAssignmentType</key>
+		<integer>0</integer>
+		<key>properties</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>contentSize</string>
+				<key>type</key>
+				<string>Size</string>
+				<key>value</key>
+				<array>
+					<real>400</real>
+					<real>2980</real>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>anchorPoint</string>
+				<key>type</key>
+				<string>Point</string>
+				<key>value</key>
+				<array>
+					<real>0.0</real>
+					<real>0.0</real>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>scale</string>
+				<key>type</key>
+				<string>ScaleLock</string>
+				<key>value</key>
+				<array>
+					<real>1</real>
+					<real>1</real>
+					<false/>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>ignoreAnchorPointForPosition</string>
+				<key>type</key>
+				<string>Check</string>
+				<key>value</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>notes</key>
+	<array/>
+	<key>resolutions</key>
+	<array>
+		<dict>
+			<key>centeredOrigin</key>
+			<false/>
+			<key>ext</key>
+			<string>iphone</string>
+			<key>height</key>
+			<integer>0</integer>
+			<key>name</key>
+			<string>iPhone</string>
+			<key>scale</key>
+			<real>1</real>
+			<key>width</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>sequences</key>
+	<array>
+		<dict>
+			<key>autoPlay</key>
+			<true/>
+			<key>callbackChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>10</integer>
+			</dict>
+			<key>chainedSequenceId</key>
+			<integer>-1</integer>
+			<key>length</key>
+			<real>10</real>
+			<key>name</key>
+			<string>Default Timeline</string>
+			<key>offset</key>
+			<real>0.0</real>
+			<key>position</key>
+			<real>0.0</real>
+			<key>resolution</key>
+			<real>30</real>
+			<key>scale</key>
+			<real>128</real>
+			<key>sequenceId</key>
+			<integer>0</integer>
+			<key>soundChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>9</integer>
+			</dict>
+		</dict>
+	</array>
+	<key>stageBorder</key>
+	<integer>3</integer>
+</dict>
+</plist>

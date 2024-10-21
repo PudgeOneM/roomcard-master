@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>centeredOrigin</key>
+	<false/>
+	<key>currentResolution</key>
+	<integer>0</integer>
+	<key>currentSequenceId</key>
+	<integer>0</integer>
+	<key>fileType</key>
+	<string>CocosBuilder</string>
+	<key>fileVersion</key>
+	<integer>4</integer>
+	<key>guides</key>
+	<array/>
+	<key>jsControlled</key>
+	<false/>
+	<key>nodeGraph</key>
+	<dict>
+		<key>baseClass</key>
+		<string>CCNode</string>
+		<key>children</key>
+		<array>
+			<dict>
+				<key>baseClass</key>
+				<string>CCLabelTTF</string>
+				<key>children</key>
+				<array/>
+				<key>customClass</key>
+				<string></string>
+				<key>displayName</key>
+				<string>CCLabelTTF</string>
+				<key>memberVarAssignmentName</key>
+				<string></string>
+				<key>memberVarAssignmentType</key>
+				<integer>0</integer>
+				<key>properties</key>
+				<array>
+					<dict>
+						<key>name</key>
+						<string>position</string>
+						<key>type</key>
+						<string>Position</string>
+						<key>value</key>
+						<array>
+							<real>50</real>
+							<real>50</real>
+							<integer>4</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>anchorPoint</string>
+						<key>type</key>
+						<string>Point</string>
+						<key>value</key>
+						<array>
+							<real>0.5</real>
+							<real>0.5</real>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>scale</string>
+						<key>type</key>
+						<string>ScaleLock</string>
+						<key>value</key>
+						<array>
+							<real>1</real>
+							<real>1</real>
+							<false/>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>ignoreAnchorPointForPosition</string>
+						<key>type</key>
+						<string>Check</string>
+						<key>value</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontName</string>
+						<key>type</key>
+						<string>FontTTF</string>
+						<key>value</key>
+						<string>Helvetica</string>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontSize</string>
+						<key>type</key>
+						<string>FloatScale</string>
+						<key>value</key>
+						<array>
+							<real>24</real>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>dimensions</string>
+						<key>type</key>
+						<string>Size</string>
+						<key>value</key>
+						<array>
+							<real>100</real>
+							<real>100</real>
+							<integer>1</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>horizontalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>verticalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>string</string>
+						<key>type</key>
+						<string>Text</string>
+						<key>value</key>
+						<string>1．基本规则
+ 游戏人数：4人。
+ 游戏牌数：一副完整的牌，共54张牌。
+ 组队：有红十的玩家为一队，其余玩家为另一队；当玩家同时有两张红十，则自己一队，其余玩家为另一队。
+ 2．基本游戏流程
+ 发牌――&gt;有红十的玩家决定是否亮红十（亮出牌的玩家系统标注一下）――&gt;出牌――&gt;游戏结束――&gt;计算分数  3．发牌和出牌顺序 发牌：当所有玩家都准备好后，游戏开始，从上一局的第一名开始逆时针发牌。
+ 如果是第一局、新局则随机选择一个玩家开始逆时针发牌。  出牌顺序：手中有红桃3的玩家先出牌，逆时针方向依次轮流出牌。先出牌的不一定出红桃3，可以任意出。
+
+接风：某玩家出完牌后，并且没有人要。这时候下一家没出完牌，则直接由下一家玩家接风获得出牌权，可以出任意的牌型。  4．牌型 单张：从小到大为3、4、5、6、7、8、9、10（只包括黑桃，草花），J，Q，K，A，2，小王，大王，方块10/红桃10。不分花色
+
+散牌：散牌分为1张和2张。
+1张为单牌，除炸弹外，仅有大的单牌可压小的单牌。
+2张为对子，除炸弹外，仅有大的对子可压小的对子。
+顺子：
+顺子指下面数列中从左到右连续三张以上单牌的组合，数列为：
+A、2、3、4、5、6、7、8、9、10、J、Q、K、A；
+A和2可以组在顺子里，比如A23
+特殊：红桃10和方块10也可当成普通10成为顺子的一部分。
+炸弹：三张以上大小相同的牌，即可组成一颗炸弹，炸弹的大小和牌大小相关，比如3张8比3张7大；炸弹大小还与牌数相关，比如4张3比3张2大。
+
+特殊：红桃10和方块10组成的一对红10，为最大炸弹。
+大小王可以组成旗杆炸弹，为第二大的炸弹。 
+ 5．游戏结束条件
+ 当有任意一队的所有玩家都出完牌，则游戏结束。 
+上游：第一个将自己牌全部出完的人，为上游；
+二游：第二个将自己牌全部出完的人，为二游；
+三游：第三个将自己牌全部出完的人，为三游；
+下游：最后将自己牌出完或不能出完的人，为下游。
+
+6. 计分规则
+基础分1分。
+一、红桃10和方块10分别在两人手中，即2打2算法：
+1、某方分别争得上游、二游，完胜。胜者各得4分，负者各扣4分；
+2、某方分别争得上游、三游，小胜。胜者各得2分，负者各扣2分；
+3、如果一方争得上游、下游，另一方分别二游、三游，为平局，该局不计分。
+二、红桃10和方块10集中在一人手中，称该人双红十，即1打3算法：
+1、双红10方争得上游，完胜。红10方得18分，其他人扣6分；
+2、双红10方争得2游或3游，打平，双方都不得分；
+3、双红10方下游，红10方扣18分，其他人得6分；
+
+特殊：如果本局两张红十都亮牌，亮牌方胜利的,双方得扣分乘以2;亮牌方失败的,双方得扣分乘以4!
+</string>
+					</dict>
+				</array>
+				<key>selected</key>
+				<true/>
+			</dict>
+		</array>
+		<key>customClass</key>
+		<string></string>
+		<key>displayName</key>
+		<string>CCNode</string>
+		<key>memberVarAssignmentName</key>
+		<string></string>
+		<key>memberVarAssignmentType</key>
+		<integer>0</integer>
+		<key>properties</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>contentSize</string>
+				<key>type</key>
+				<string>Size</string>
+				<key>value</key>
+				<array>
+					<real>400</real>
+					<real>3100</real>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>anchorPoint</string>
+				<key>type</key>
+				<string>Point</string>
+				<key>value</key>
+				<array>
+					<real>0.0</real>
+					<real>0.0</real>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>scale</string>
+				<key>type</key>
+				<string>ScaleLock</string>
+				<key>value</key>
+				<array>
+					<real>1</real>
+					<real>1</real>
+					<false/>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>ignoreAnchorPointForPosition</string>
+				<key>type</key>
+				<string>Check</string>
+				<key>value</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>notes</key>
+	<array/>
+	<key>resolutions</key>
+	<array>
+		<dict>
+			<key>centeredOrigin</key>
+			<false/>
+			<key>ext</key>
+			<string>iphone</string>
+			<key>height</key>
+			<integer>0</integer>
+			<key>name</key>
+			<string>iPhone</string>
+			<key>scale</key>
+			<real>1</real>
+			<key>width</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>sequences</key>
+	<array>
+		<dict>
+			<key>autoPlay</key>
+			<true/>
+			<key>callbackChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>10</integer>
+			</dict>
+			<key>chainedSequenceId</key>
+			<integer>-1</integer>
+			<key>length</key>
+			<real>10</real>
+			<key>name</key>
+			<string>Default Timeline</string>
+			<key>offset</key>
+			<real>0.0</real>
+			<key>position</key>
+			<real>0.0</real>
+			<key>resolution</key>
+			<real>30</real>
+			<key>scale</key>
+			<real>128</real>
+			<key>sequenceId</key>
+			<integer>0</integer>
+			<key>soundChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>9</integer>
+			</dict>
+		</dict>
+	</array>
+	<key>stageBorder</key>
+	<integer>3</integer>
+</dict>
+</plist>

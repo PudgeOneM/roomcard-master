@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>centeredOrigin</key>
+	<false/>
+	<key>currentResolution</key>
+	<integer>0</integer>
+	<key>currentSequenceId</key>
+	<integer>0</integer>
+	<key>fileType</key>
+	<string>CocosBuilder</string>
+	<key>fileVersion</key>
+	<integer>4</integer>
+	<key>guides</key>
+	<array/>
+	<key>jsControlled</key>
+	<false/>
+	<key>nodeGraph</key>
+	<dict>
+		<key>baseClass</key>
+		<string>CCNode</string>
+		<key>children</key>
+		<array>
+			<dict>
+				<key>baseClass</key>
+				<string>CCLabelTTF</string>
+				<key>children</key>
+				<array/>
+				<key>customClass</key>
+				<string></string>
+				<key>displayName</key>
+				<string>CCLabelTTF</string>
+				<key>memberVarAssignmentName</key>
+				<string></string>
+				<key>memberVarAssignmentType</key>
+				<integer>0</integer>
+				<key>properties</key>
+				<array>
+					<dict>
+						<key>name</key>
+						<string>position</string>
+						<key>type</key>
+						<string>Position</string>
+						<key>value</key>
+						<array>
+							<real>50</real>
+							<real>50</real>
+							<integer>4</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>anchorPoint</string>
+						<key>type</key>
+						<string>Point</string>
+						<key>value</key>
+						<array>
+							<real>0.5</real>
+							<real>0.5</real>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>scale</string>
+						<key>type</key>
+						<string>ScaleLock</string>
+						<key>value</key>
+						<array>
+							<real>1</real>
+							<real>1</real>
+							<false/>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>ignoreAnchorPointForPosition</string>
+						<key>type</key>
+						<string>Check</string>
+						<key>value</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontName</string>
+						<key>type</key>
+						<string>FontTTF</string>
+						<key>value</key>
+						<string>Helvetica</string>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontSize</string>
+						<key>type</key>
+						<string>FloatScale</string>
+						<key>value</key>
+						<array>
+							<real>22</real>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>dimensions</string>
+						<key>type</key>
+						<string>Size</string>
+						<key>value</key>
+						<array>
+							<real>100</real>
+							<real>100</real>
+							<integer>1</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>horizontalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>verticalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>string</string>
+						<key>type</key>
+						<string>Text</string>
+						<key>value</key>
+						<string>庆元麻将规则
+玩法：麻将牌数136张，无花牌，无花牌，14张胡，可吃碰杠，截胡，轮庄，白板可做假财神。
+计分规则
+七对：
+自摸、点炮软胡7分，庄*2  自摸、点炮硬胡10分，庄*2 七对天胡、地胡均20分，庄*2
+七对胡、和爆头胡均10分，庄*2（七对爆头胡只能自摸）
+ 
+单吊：
+自摸、点炮硬胡10分，庄*2 软胡只能自摸10分，庄*2
+ 
+大碰胡：
+自摸、点炮软胡7分，庄*2 自摸、点炮硬胡10分，庄*2 清一色碰碰胡自摸、点炮硬胡软胡均一样20分，庄*2 碰碰胡单吊自摸、点炮硬胡（软胡只能自摸）10分，庄*2
+ 
+吊头：
+平胡爆头5分，庄家*2 七对爆头10分，庄家*2
+ 
+十三幺
+闲家自摸其余3分庄家4*2分 庄家自摸每家4*2分 闲家抓冲，点冲的闲家3分，其余闲家2分庄家3*2分；点炮庄家4*2分 庄家抓冲，点冲4*2分，其余的3*2分
+ 
+清一色：
+平胡自摸、点炮均10分，庄家*2 清一色七对自摸、点炮均20分，庄家*2 清一色财神单吊可以放炮、自摸均20分，庄*2
+ 
+十字：
+每人10分，庄家*2
+ 
+清风：
+自摸点炮均20分，庄家*2
+ 
+财神卡：
+每人20分，庄家*2
+ 
+财飘：
+分数*2，每一个财飘都*2
+ 
+杠飘：
+分数*2 每一个杠飘都*2
+ 
+天胡：
+只能庄胡，每人40分，庄家得120分
+ 
+地胡：
+每人20分，庄家*2
+ 
+三财倒：
+每人5分，庄家*2 
+ 
+抢杠胡：
+闲家3分，庄家4*2分（被抢杠的闲家跟其他闲家扣一样的分）
+ 
+杠头开花：
+每人5分，庄家*2
+ 
+特殊规则及胡法
+1、吃、碰以后不能立马杠。
+ 
+2、流局：最后要留34张牌。
+ 
+3、手上最后一张牌胡（即单吊）算分与七对一样，如果是财神就只能爆头，不能点冲。不是财神可以抓冲。
+ 
+4、所有的白板将代替翻出来财神的那张牌，白板不起原有的功能作用（白板可以继续做字牌）。
+ 
+5、承包：有人吃（包括碰）了你 2次（总数），最后你点炮了，那所有人的分数你一个人赔付。所有人之间都可以发生，如果被其余人胡掉，那就不存在承包了，只要不是自己点炮。（承包没有固定倍数。只是所有人的分数一个人赔付。庄胡牌的话付6倍。闲家胡牌的话付4倍。）同一家最多吃碰杠两次，第三次可以胡但不能吃、碰、杠。
+ 
+6、漏胡：若玩家 A 为叫胡的状态下，如下家 B 打出一张玩家 A 可以胡的牌而玩家 A 却放弃不胡，那若对家 C 或上家 D 打出相同的一张牌时，玩家 A 是不能胡那一张的。 ，但只针对这个胡口的牌（不是玩家能胡的所有牌）有效。
+（还有一种，如果第一家打的是软胡，第二家打的牌可以是硬胡，那么允许胡硬胡，也就是看胡的牌型大，总结除非胡牌变大，要不本轮就不能再胡了。）
+ 
+7、没有一炮多响，一盘只能有一位胡牌者。如有一人以上同时表示捉冲时，按顺序胡牌。
+ 
+8、庄家胡与翻倍得分都是*2
+ 
+9、清一色或者清风两种胡，吃碰杠落地有三摊的，谁点炮谁全部赔付，其余两人不需要付分。（外面吃碰杠有三下，不需要同个人谁点炮谁全赔）
+ 
+10、吃、碰、杠同一家两摊后，如果被吃那一家点炮给吃的一家，则，由点炮的全部赔付。
+ 
+11、一局中到最后4张牌，谁点炮，谁全赔。
+ 
+12、财神归位算硬胡。
+ 
+13、财神可以吃、碰、杠，吃碰杠以后手中没财神算硬胡。财神归位才可吃牌
+ 
+14、手中只剩最后4张（成单吊时），可以吃什么，打什么，平时不是吃什么打什么。</string>
+					</dict>
+				</array>
+				<key>selected</key>
+				<true/>
+			</dict>
+		</array>
+		<key>customClass</key>
+		<string></string>
+		<key>displayName</key>
+		<string>CCNode</string>
+		<key>memberVarAssignmentName</key>
+		<string></string>
+		<key>memberVarAssignmentType</key>
+		<integer>0</integer>
+		<key>properties</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>contentSize</string>
+				<key>type</key>
+				<string>Size</string>
+				<key>value</key>
+				<array>
+					<real>400</real>
+					<real>3530</real>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>anchorPoint</string>
+				<key>type</key>
+				<string>Point</string>
+				<key>value</key>
+				<array>
+					<real>0.0</real>
+					<real>0.0</real>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>scale</string>
+				<key>type</key>
+				<string>ScaleLock</string>
+				<key>value</key>
+				<array>
+					<real>1</real>
+					<real>1</real>
+					<false/>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>ignoreAnchorPointForPosition</string>
+				<key>type</key>
+				<string>Check</string>
+				<key>value</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>notes</key>
+	<array/>
+	<key>resolutions</key>
+	<array>
+		<dict>
+			<key>centeredOrigin</key>
+			<false/>
+			<key>ext</key>
+			<string>iphone</string>
+			<key>height</key>
+			<integer>0</integer>
+			<key>name</key>
+			<string>iPhone</string>
+			<key>scale</key>
+			<real>1</real>
+			<key>width</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>sequences</key>
+	<array>
+		<dict>
+			<key>autoPlay</key>
+			<true/>
+			<key>callbackChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>10</integer>
+			</dict>
+			<key>chainedSequenceId</key>
+			<integer>-1</integer>
+			<key>length</key>
+			<real>10</real>
+			<key>name</key>
+			<string>Default Timeline</string>
+			<key>offset</key>
+			<real>0.0</real>
+			<key>position</key>
+			<real>0.0</real>
+			<key>resolution</key>
+			<real>30</real>
+			<key>scale</key>
+			<real>128</real>
+			<key>sequenceId</key>
+			<integer>0</integer>
+			<key>soundChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>9</integer>
+			</dict>
+		</dict>
+	</array>
+	<key>stageBorder</key>
+	<integer>3</integer>
+</dict>
+</plist>

@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>centeredOrigin</key>
+	<false/>
+	<key>currentResolution</key>
+	<integer>0</integer>
+	<key>currentSequenceId</key>
+	<integer>0</integer>
+	<key>fileType</key>
+	<string>CocosBuilder</string>
+	<key>fileVersion</key>
+	<integer>4</integer>
+	<key>guides</key>
+	<array/>
+	<key>jsControlled</key>
+	<false/>
+	<key>nodeGraph</key>
+	<dict>
+		<key>baseClass</key>
+		<string>CCNode</string>
+		<key>children</key>
+		<array>
+			<dict>
+				<key>baseClass</key>
+				<string>CCLabelTTF</string>
+				<key>children</key>
+				<array/>
+				<key>customClass</key>
+				<string></string>
+				<key>displayName</key>
+				<string>CCLabelTTF</string>
+				<key>memberVarAssignmentName</key>
+				<string></string>
+				<key>memberVarAssignmentType</key>
+				<integer>0</integer>
+				<key>properties</key>
+				<array>
+					<dict>
+						<key>name</key>
+						<string>position</string>
+						<key>type</key>
+						<string>Position</string>
+						<key>value</key>
+						<array>
+							<real>50</real>
+							<real>50</real>
+							<integer>4</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>anchorPoint</string>
+						<key>type</key>
+						<string>Point</string>
+						<key>value</key>
+						<array>
+							<real>0.5</real>
+							<real>0.5</real>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>scale</string>
+						<key>type</key>
+						<string>ScaleLock</string>
+						<key>value</key>
+						<array>
+							<real>1</real>
+							<real>1</real>
+							<false/>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>ignoreAnchorPointForPosition</string>
+						<key>type</key>
+						<string>Check</string>
+						<key>value</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontName</string>
+						<key>type</key>
+						<string>FontTTF</string>
+						<key>value</key>
+						<string>Helvetica</string>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontSize</string>
+						<key>type</key>
+						<string>FloatScale</string>
+						<key>value</key>
+						<array>
+							<real>24</real>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>dimensions</string>
+						<key>type</key>
+						<string>Size</string>
+						<key>value</key>
+						<array>
+							<real>100</real>
+							<real>100</real>
+							<integer>1</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>horizontalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>verticalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>string</string>
+						<key>type</key>
+						<string>Text</string>
+						<key>value</key>
+						<string>系统提示：因网络异常引起的界面异常请刷新界面。
+
+胡牌类型
+平胡    1台
+边倒    1台
+对倒    1台
+嵌倒    1台
+单吊    1台
+大吊    6台
+对对胡  6台
+杠开    1台
+送杠  （算杠开）
+拉杠    1台
+天胡    13台
+地胡    13台
+清一色  8台
+混一色  6台
+字一色  8台
+海底捞月1台
+八花    16台
+四花    8台
+中发白  1台
+正风    1台
+圈风    1台
+正花    2台
+野花    1台
+门清    1台
+自摸    1台
+圈正风 2台
+ 
+特殊规则及胡法
+1、支持一炮多响，例：A打出的牌B和C都可以胡，且都胡了，则A需要支付BC二家的。
+2、流局时，如果庄家有明杠或暗杠，则庄家轮到下一家。反之则继续坐庄。
+3、吃碰杠同一家两次以前不允许吃什么打什么。（例如我手上有3456条，我吃了6条，那么我不仅6条不能打，而且3条也是不能打的）。
+4、同一张牌上一家打出不碰胡，则下家打出不可碰胡。（在同一圈内，没有出过牌的情况下）手里两个将或有1234听牌时，如果胡的台数一样也不能胡。
+5 、象山麻将一台起胡，只要满足1台就可以胡。
+6、开局补花时。当8朵花不齐的情况下，桌面牌尾剩余14张牌时候流局。
+当8朵花全齐的情况下，桌面牌尾剩余16张牌时候流局。
+另外，如果桌面上每出现一次有明杠、暗杠，每杠一次是多加2张牌
+7、暗杠有两种情况：①有吃、碰、杠以后，暗杠要将一张牌翻出来。②没吃没碰没杠的时候，暗杠将牌都倒扣过来，有吃、碰、杠以后需将暗杠的一张牌翻过来，（暗杠的牌都倒扣的时候算门清的，亮了一张牌以后就不算门清）
+ 
+积分计算
+积分M=总台数*每台基础分
+a. 胡牌家是自摸，则另三家各付一份积分M  给胡牌家。
+b. 胡牌家是别家打倒的，则打倒家付的积分为M *2
+c. 特殊胡牌：
+                  玩家A  玩家B  玩家C 玩家D
+拉杠胡（A拉B）   赢5*M  输5*M    0     0
+送杠胡（A送给B） 赢5*M  赢5*M    0     0
+还杠胡（A送B杠
+，杠后B打给A胡）赢5*M  赢5*M    0     0
+三包(A包B）A自摸 赢5*M  赢5*M    0     0
+三包(A包B）b放炮 赢4*M  赢4*M    0     0
+三包(A包B）c放炮 赢4*M  赢2*M  赢2*M   0
+互包(A包B）A自摸赢10*M  赢10*M   0     0
+互包(A包B）b放炮 赢8*M  赢8*M    0     0
+互包(A包B）c放炮 赢6*M  赢4*M  赢2*M   0
+ 
+三包：一方给另一方，吃碰杠三次或3次以上。（三包以后双方其中一人胡牌另一人根据上述表格进行扣分）
+互包：双方互相吃碰杠三次或3次以上。
+拉杠胡：A碰出去的牌去杠，而杠的牌B刚好可以胡且胡了。可与三包OR互包共存，积分累加。
+送杠胡：A打出的牌，B杠后，B胡牌。可与三包OR互包共存，积分累加。
+还杠胡：A打出的牌，B杠后，B打出牌，A胡牌。可与三包OR互包共存，积分累加。
+ </string>
+					</dict>
+				</array>
+			</dict>
+		</array>
+		<key>customClass</key>
+		<string></string>
+		<key>displayName</key>
+		<string>CCNode</string>
+		<key>memberVarAssignmentName</key>
+		<string></string>
+		<key>memberVarAssignmentType</key>
+		<integer>0</integer>
+		<key>properties</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>contentSize</string>
+				<key>type</key>
+				<string>Size</string>
+				<key>value</key>
+				<array>
+					<real>400</real>
+					<real>3500</real>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>anchorPoint</string>
+				<key>type</key>
+				<string>Point</string>
+				<key>value</key>
+				<array>
+					<real>0.0</real>
+					<real>0.0</real>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>scale</string>
+				<key>type</key>
+				<string>ScaleLock</string>
+				<key>value</key>
+				<array>
+					<real>1</real>
+					<real>1</real>
+					<false/>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>ignoreAnchorPointForPosition</string>
+				<key>type</key>
+				<string>Check</string>
+				<key>value</key>
+				<false/>
+			</dict>
+		</array>
+		<key>selected</key>
+		<true/>
+	</dict>
+	<key>notes</key>
+	<array/>
+	<key>resolutions</key>
+	<array>
+		<dict>
+			<key>centeredOrigin</key>
+			<false/>
+			<key>ext</key>
+			<string>iphone</string>
+			<key>height</key>
+			<integer>0</integer>
+			<key>name</key>
+			<string>iPhone</string>
+			<key>scale</key>
+			<real>1</real>
+			<key>width</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>sequences</key>
+	<array>
+		<dict>
+			<key>autoPlay</key>
+			<true/>
+			<key>callbackChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>10</integer>
+			</dict>
+			<key>chainedSequenceId</key>
+			<integer>-1</integer>
+			<key>length</key>
+			<real>10</real>
+			<key>name</key>
+			<string>Default Timeline</string>
+			<key>offset</key>
+			<real>0.0</real>
+			<key>position</key>
+			<real>0.0</real>
+			<key>resolution</key>
+			<real>30</real>
+			<key>scale</key>
+			<real>128</real>
+			<key>sequenceId</key>
+			<integer>0</integer>
+			<key>soundChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>9</integer>
+			</dict>
+		</dict>
+	</array>
+	<key>stageBorder</key>
+	<integer>3</integer>
+</dict>
+</plist>

@@ -1,0 +1,213 @@
+
+var playData = 
+{   
+    socketListener:function(msg)
+    {
+        var head = buffer2StructObj(msg.slice(0, 8), 'TCP_Head') 
+        switch(head.CommandInfo.wMainCmdID)
+        {
+        case MDM_GF_FRAME: //100
+            {   
+                switch(head.CommandInfo.wSubCmdID)
+                {
+                    case SUB_GF_GAME_SCENE://在发出SUB_GF_GAME_OPTION时会收到这条协议  
+                    {   
+                        switch(tableData.CMD_GF_GameStatus.cbGameStatus)
+                        {
+                            case GAME_SCENE_FREE:
+                            {
+                                var l = function(msg)
+                                {   
+                                    tableData.gameListener(msg)
+                                    playData.socketListener(msg)
+                                    playData.socketGameListener(msg)
+                                }
+                                socket.registSocketListener(l)
+                                mainScene.scene.schedule(mainScene.updateTableUser, 1, 9999, 0);
+                                if(tableData.getUserWithUserId(selfdwUserID).cbUserStatus == US_SIT)
+                                {
+                                    socket.sendMessage(MDM_GF_FRAME, SUB_GF_USER_READY)
+                                }
+                                var body = buffer2StructObj(msg.slice(8), 'CMD_S_StatusFree');
+                                mainScene.dwUserID = body.dwUserID;
+                                mainScene.isSitDownEnable();
+                                mainScene.showHuangFan(body.cbHuangZhuang);
+                                if (body.bGameSetEnd == false)
+                                {
+                                    mainScene.gameSetOption();
+                                }
+                                else
+                                {
+                                    mainScene.onSubGameOption(body.bGameOption);
+                                }
+                                break;
+                            }
+                            case GAME_SCENE_PLAY: //无此状态
+                            {
+                                var body = buffer2StructObj(msg.slice(8), 'CMD_S_StatusPlay');
+                                if(body)
+                                {
+                                    gameLog.log('body:' + head.CommandInfo.wMainCmdID + '-' + head.CommandInfo.wSubCmdID, body)
+                                }                           
+                                mainScene.onEventScenePlay(body);
+                                var l = function(msg)
+                                {   
+                                    tableData.gameListener(msg)
+                                    playData.socketGameListener(msg)
+                                }
+                                socket.registSocketListener(l)
+                                break;
+                            }
+                        }
+                        
+                        break
+                    }     
+                }
+                break;
+            }
+        }
+    },
+    socketGameListener:function(msg)
+    {
+        var head = buffer2StructObj(msg.slice(0, 8), 'TCP_Head') 
+        switch(head.CommandInfo.wMainCmdID)
+        {
+            case MDM_GF_GAME:       //游戏消息 200
+            {
+                switch(head.CommandInfo.wSubCmdID)
+                {
+                    case SUB_S_GAME_START: 
+                    {   
+                        var body = buffer2StructObj(msg.slice(8), 'CMD_S_GameStart');
+                        if(body)
+                        {
+                            gameLog.log('body:' + head.CommandInfo.wMainCmdID + '-' + head.CommandInfo.wSubCmdID, body)
+                        }    
+                        return mainScene.onSubGameStart(body);
+                    }  
+                    case SUB_S_OUT_CARD:
+                    {
+                        selectChi.hide();
+                        selectBi.hide();
+                        var body = buffer2StructObj(msg.slice(8), 'CMD_S_OutCard');
+                        if(body)
+                        {
+                            gameLog.log('body:' + head.CommandInfo.wMainCmdID + '-' + head.CommandInfo.wSubCmdID, body)
+                        }    
+                        return mainScene.onSubOutCard(body);
+                    }
+                    case SUB_S_OPERATE_NOTIFY:
+                    {
+                        selectChi.hide();
+                        selectBi.hide();
+                        var body = buffer2StructObj(msg.slice(8), 'CMD_S_OperateNotify');
+                        if(body)
+                        {
+                            gameLog.log('body:' + head.CommandInfo.wMainCmdID + '-' + head.CommandInfo.wSubCmdID, body)
+                        }    
+                        return mainScene.onSubOperateNotify(body);
+                    }
+                    case SUB_S_OPERATE_RESULT:
+                    {
+                        selectChi.hide();
+                        selectBi.hide();
+                        var body = buffer2StructObj(msg.slice(8), 'CMD_S_OperateResult');
+                        if(body)
+                        {
+                            gameLog.log('body:' + head.CommandInfo.wMainCmdID + '-' + head.CommandInfo.wSubCmdID, body)
+                        }    
+                        return mainScene.onSubOperateResult(body);
+                    }
+                    case SUB_S_OPERATE_TPW:
+                    {
+                        selectChi.hide();
+                        selectBi.hide();
+                        var body = buffer2StructObj(msg.slice(8), 'CMD_S_OperateTPW');
+                        if(body)
+                        {
+                            gameLog.log('body:' + head.CommandInfo.wMainCmdID + '-' + head.CommandInfo.wSubCmdID, body)
+                        }    
+                        return mainScene.onSubOperateTPW(body);
+                    }
+                    case SUB_S_OPERATE_PAO:
+                    {
+                        selectChi.hide();
+                        selectBi.hide();
+                        var body = buffer2StructObj(msg.slice(8), 'CMD_S_OperatePao');
+                        if(body)
+                        {
+                            gameLog.log('body:' + head.CommandInfo.wMainCmdID + '-' + head.CommandInfo.wSubCmdID, body)
+                        }    
+                        if(outMahJong._bActEnd)
+                        {
+                            mainScene.onSubOperatePao(body);
+                        }
+                        else
+                        {
+                            mainScene._dataPao = body;
+                            mainScene._bPao    = true;
+                        }
+                        return true;
+                        //return mainScene.onSubOperatePao(body);
+                    }
+                    case SUB_S_SEND_CARD:
+                    {
+                        selectChi.hide();
+                        selectBi.hide();
+                        var body = buffer2StructObj(msg.slice(8), 'CMD_S_SendCard');
+                        if(body)
+                        {
+                            gameLog.log('body:' + head.CommandInfo.wMainCmdID + '-' + head.CommandInfo.wSubCmdID, body)
+                        }    
+                        return mainScene.onSubSendCard(body);
+                    }
+                    case SUB_CONTINUE_GAME:
+                    {
+                        selectChi.hide();
+                        selectBi.hide();
+                        var body = buffer2StructObj(msg.slice(8), 'CMD_S_CONTINUE_GAME');
+                        if(body)
+                        {
+                            gameLog.log('body:' + head.CommandInfo.wMainCmdID + '-' + head.CommandInfo.wSubCmdID, body)
+                        }    
+                        mainScene._wCurrentUser = body.wChaird;
+                        return true;
+                    }
+                    case SUB_S_GAME_END:
+                    {
+                        selectChi.hide();
+                        selectBi.hide();
+                        var body = buffer2StructObj(msg.slice(8), 'CMD_S_GameEnd');
+                        if(body)
+                        {
+                            gameLog.log('body:' + head.CommandInfo.wMainCmdID + '-' + head.CommandInfo.wSubCmdID, body)
+                        }    
+                        return mainScene.onSubGameEnd(body); 
+                    }
+                    case SUB_S_GAME_GM:
+                    {
+                        var body = buffer2StructObj(msg.slice(8), 'CMD_S_GAME_GM');
+                        return mainScene.onSubGameGM(body); 
+                    }
+                    case SUB_S_GAMEOPTION_RESULT:
+                    {
+                        var body = buffer2StructObj(msg.slice(8), 'CMD_C_GAMEOPTION_RESUTL');
+                        return mainScene.onSubGameOption(body.bGameOption); 
+                    }
+                }
+                break;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

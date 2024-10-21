@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>centeredOrigin</key>
+	<false/>
+	<key>currentResolution</key>
+	<integer>0</integer>
+	<key>currentSequenceId</key>
+	<integer>0</integer>
+	<key>fileType</key>
+	<string>CocosBuilder</string>
+	<key>fileVersion</key>
+	<integer>4</integer>
+	<key>guides</key>
+	<array/>
+	<key>jsControlled</key>
+	<false/>
+	<key>nodeGraph</key>
+	<dict>
+		<key>baseClass</key>
+		<string>CCNode</string>
+		<key>children</key>
+		<array>
+			<dict>
+				<key>baseClass</key>
+				<string>CCLabelTTF</string>
+				<key>children</key>
+				<array/>
+				<key>customClass</key>
+				<string></string>
+				<key>displayName</key>
+				<string>CCLabelTTF</string>
+				<key>memberVarAssignmentName</key>
+				<string></string>
+				<key>memberVarAssignmentType</key>
+				<integer>0</integer>
+				<key>properties</key>
+				<array>
+					<dict>
+						<key>name</key>
+						<string>position</string>
+						<key>type</key>
+						<string>Position</string>
+						<key>value</key>
+						<array>
+							<real>50</real>
+							<real>50</real>
+							<integer>4</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>anchorPoint</string>
+						<key>type</key>
+						<string>Point</string>
+						<key>value</key>
+						<array>
+							<real>0.5</real>
+							<real>0.5</real>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>scale</string>
+						<key>type</key>
+						<string>ScaleLock</string>
+						<key>value</key>
+						<array>
+							<real>1</real>
+							<real>1</real>
+							<false/>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>ignoreAnchorPointForPosition</string>
+						<key>type</key>
+						<string>Check</string>
+						<key>value</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontName</string>
+						<key>type</key>
+						<string>FontTTF</string>
+						<key>value</key>
+						<string>Helvetica</string>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontSize</string>
+						<key>type</key>
+						<string>FloatScale</string>
+						<key>value</key>
+						<array>
+							<real>24</real>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>dimensions</string>
+						<key>type</key>
+						<string>Size</string>
+						<key>value</key>
+						<array>
+							<real>100</real>
+							<real>100</real>
+							<integer>1</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>horizontalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>verticalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>string</string>
+						<key>type</key>
+						<string>Text</string>
+						<key>value</key>
+						<string>游戏规则：
+一、游戏人数：3人
+二、游戏牌数：一副牌去掉大小王、3个2、1个A、共剩48张牌，每人16张牌。
+三、出牌顺序：开局首轮由黑桃3玩家首先出牌，且出牌第一手必须带有黑桃3；次轮开始由上一轮赢牌的玩家先出牌。
+四、牌型
+1、单张：任意一张单牌。
+2、顺子：任意5张或者5张以上点数相连的牌。（2是最大的单牌，不能当顺子出，即顺子从3以上的牌开始可以）。
+3、对子：两张同样的牌（如:77）。
+4、连对：2对或者2对以上点数相连的牌。（如：3344、334455、33445566）
+5、三带二：点数相同的三张牌+两张任何牌，可以带一对或者两张单排（如：555+44、555+67）。
+6、四带三：点数相同的四张牌+三张任何牌。如：5555+446、5555+678，不当炸，牌比它小的炸可以压它，四带三没有大小之分，（假如一家先打3333+456，下家能用9999+445压他。）在最后出完的时候允许四带一或者四带二。
+7、飞机：两个或者两个以上相连的3张，两个3连可以带4张任何牌（如：333444+5678或333444+5567）三个3连可以带6张任何牌（如：333444555+67JQKA或333444555+667789）。
+8、炸弹：4张点数相同的牌（如：3333）,当炸时不带牌，每个炸额外奖励5分。
+9、春天：有一家牌已经出完，另外一家或者两家1张牌都没有出，此时的状态为关春天。
+10、三个A：可当炸，也可当三个的 ，三个A是炸弹里最小的炸，不允许AAA+345 出牌，只能AAA+34 这种三带二出牌。
+11、特殊牌型：玩家出牌后，手中只剩下点数相同的3张或点数相同的3张+1张任意牌（如333或333+4，且该玩家有出牌权，此时的3张是可以不带或者3带1张）；玩家手中只剩下2个3连或3个3连（如：333444，此时不带牌或者带1—4张牌
+；如333444555，此时不带牌或者带1-6张牌都是可以出牌的）。
+12、报警：玩家手中只剩下1张牌，此时的状态为报警。报警玩家的上手玩家必须出手中最大的单排顶牌。上家出牌对子或者最大的单牌。
+13、必接：玩家手中有比上家大的牌，必须出手中比上家大的牌管住。
+五、积分规则：
+1、有一家牌已经出完，另外两家按手中剩余的牌数来扣分，1张牌记作1分（如：剩7张牌，记作-7分）。注：当玩家处于报警状态下时（即手中只剩下1张牌）是不扣分的（如：剩1张牌，记作+0）。
+2、关春天：被关春天者扣分翻倍（如：剩16张牌，记作-32）。
+3、炸弹：1个炸弹累计加5分（被炸的2个玩家各扣5分，有炸弹的玩家加10分）。
+4、上家3带2，下家就剩3个或3个和一个，是可以压的。（如:上家333+56，下家444或444+8）下家可以貹局。
+5、4张一样的牌可以不当炸,就可以4带3个任意的牌。注意就没有奖励。</string>
+					</dict>
+				</array>
+			</dict>
+		</array>
+		<key>customClass</key>
+		<string></string>
+		<key>displayName</key>
+		<string>CCNode</string>
+		<key>memberVarAssignmentName</key>
+		<string></string>
+		<key>memberVarAssignmentType</key>
+		<integer>0</integer>
+		<key>properties</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>contentSize</string>
+				<key>type</key>
+				<string>Size</string>
+				<key>value</key>
+				<array>
+					<real>400</real>
+					<real>2400</real>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>anchorPoint</string>
+				<key>type</key>
+				<string>Point</string>
+				<key>value</key>
+				<array>
+					<real>0.0</real>
+					<real>0.0</real>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>scale</string>
+				<key>type</key>
+				<string>ScaleLock</string>
+				<key>value</key>
+				<array>
+					<real>1</real>
+					<real>1</real>
+					<false/>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>ignoreAnchorPointForPosition</string>
+				<key>type</key>
+				<string>Check</string>
+				<key>value</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>notes</key>
+	<array/>
+	<key>resolutions</key>
+	<array>
+		<dict>
+			<key>centeredOrigin</key>
+			<false/>
+			<key>ext</key>
+			<string>iphone</string>
+			<key>height</key>
+			<integer>0</integer>
+			<key>name</key>
+			<string>iPhone</string>
+			<key>scale</key>
+			<real>1</real>
+			<key>width</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>sequences</key>
+	<array>
+		<dict>
+			<key>autoPlay</key>
+			<true/>
+			<key>callbackChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>10</integer>
+			</dict>
+			<key>chainedSequenceId</key>
+			<integer>-1</integer>
+			<key>length</key>
+			<real>10</real>
+			<key>name</key>
+			<string>Default Timeline</string>
+			<key>offset</key>
+			<real>0.0</real>
+			<key>position</key>
+			<real>0.0</real>
+			<key>resolution</key>
+			<real>30</real>
+			<key>scale</key>
+			<real>128</real>
+			<key>sequenceId</key>
+			<integer>0</integer>
+			<key>soundChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>9</integer>
+			</dict>
+		</dict>
+	</array>
+	<key>stageBorder</key>
+	<integer>3</integer>
+</dict>
+</plist>

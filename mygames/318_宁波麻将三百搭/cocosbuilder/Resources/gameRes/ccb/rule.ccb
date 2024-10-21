@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>centeredOrigin</key>
+	<false/>
+	<key>currentResolution</key>
+	<integer>0</integer>
+	<key>currentSequenceId</key>
+	<integer>0</integer>
+	<key>fileType</key>
+	<string>CocosBuilder</string>
+	<key>fileVersion</key>
+	<integer>4</integer>
+	<key>guides</key>
+	<array/>
+	<key>jsControlled</key>
+	<false/>
+	<key>nodeGraph</key>
+	<dict>
+		<key>baseClass</key>
+		<string>CCNode</string>
+		<key>children</key>
+		<array>
+			<dict>
+				<key>baseClass</key>
+				<string>CCLabelTTF</string>
+				<key>children</key>
+				<array/>
+				<key>customClass</key>
+				<string></string>
+				<key>displayName</key>
+				<string>CCLabelTTF</string>
+				<key>memberVarAssignmentName</key>
+				<string></string>
+				<key>memberVarAssignmentType</key>
+				<integer>0</integer>
+				<key>properties</key>
+				<array>
+					<dict>
+						<key>name</key>
+						<string>position</string>
+						<key>type</key>
+						<string>Position</string>
+						<key>value</key>
+						<array>
+							<real>50</real>
+							<real>50</real>
+							<integer>4</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>anchorPoint</string>
+						<key>type</key>
+						<string>Point</string>
+						<key>value</key>
+						<array>
+							<real>0.5</real>
+							<real>0.5</real>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>scale</string>
+						<key>type</key>
+						<string>ScaleLock</string>
+						<key>value</key>
+						<array>
+							<real>1</real>
+							<real>1</real>
+							<false/>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>ignoreAnchorPointForPosition</string>
+						<key>type</key>
+						<string>Check</string>
+						<key>value</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontName</string>
+						<key>type</key>
+						<string>FontTTF</string>
+						<key>value</key>
+						<string>Helvetica</string>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontSize</string>
+						<key>type</key>
+						<string>FloatScale</string>
+						<key>value</key>
+						<array>
+							<real>24</real>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>dimensions</string>
+						<key>type</key>
+						<string>Size</string>
+						<key>value</key>
+						<array>
+							<real>100</real>
+							<real>100</real>
+							<integer>1</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>horizontalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>verticalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>string</string>
+						<key>type</key>
+						<string>Text</string>
+						<key>value</key>
+						<string>台数算法：
+清一色(字一色) 4台
+混一色        2台
+对对胡        2台
+杠上开花（杠开）1台
+海底捞月（最后一张胡牌）1台
+自摸          1台
+八花          16台
+四花          6台
+位花          2台
+野花          1台
+中发白碰出(暗刻,杠) 1台
+门风碰出（暗刻,杠）1台
+圈风碰出（暗刻,杠）1台
+无搭/还搭     1台
+三搭（另算）  3台
+边，嵌，单吊，对倒 1台
+大吊车        1台
+天胡          8台
+地胡          6台
+
+特殊规则：
+1.流局:所有的牌都打完,跳过财神张.
+2.不能吃什么打什么,但是成大吊时允许.
+3.财神单吊时,不能打倒,必须自摸.
+4.碰后不能马上杠.
+5.判断能否胡时,先判断基本台数加起来是否超过4台.
+
+翻倍情况：
+1．拉杠胡翻5番（算自模）----A被B拉杠，B胡牌，则A就要付5份的自摸积分。拉杠就是抢杠的意思
+2．杠上开花翻5番（算自摸）--A打的牌让B杠了，B杠上开花胡牌，则A就要付5份的自摸积分。
+另二家各付一份自摸钱。
+3．三包：
+概括：形成包的任何两家，无论其中的哪一家胡牌了，另一家一定也要付相应积分给胡家。
+如A和B两家形成包了，当A或B自摸时，包的其中一家就要在付自摸积分的基础上翻5番,
+当A或B不是自摸胡牌时，如是包的其中一家碰枪就要在付碰枪积分的基础上翻2番，否则则付的积分跟碰枪的那家相同
+4．当杠上开花和三包都有时，只能算一个，即最高只能番5番。
+
+术语定义：
+拉杠：A已经碰出一对，又摸到一张，要杠；同时，B正好听那张牌。则A被B拉杠。
+三包：A吃、碰、杠了B打出的三次牌，则A与B形成了三包的关系。
+双包：A吃、碰、杠了B打出的三次牌；同时，B碰、杠了A的三次牌；则A与B形成了倒包顺包（双包）的关系。
+正花：春夏秋冬，梅兰竹菊与东南西北占位风一一对应。
+野花：不是正花的花牌
+正风：即是圈风又是占位风的风牌
+暗刻：三张一样的牌在自己手里
+圈风：
+游戏开始第一局为东风圈，4个玩家都坐过庄后换下一个圈风。如ABCD玩家，A玩家先坐庄，当BCD都做过庄，再次轮到A时换圈风。圈风顺序：东南西北，周而复始。
+位风：
+每局都是以庄家为东风位，逆时针为：南风位，西风位，北风位。换庄时，风位也随之变换。对东风位玩家（庄家）：其位风是东，东就是位风牌，东风刻子（或杠）就是位风刻。对南风位玩家：其位风是南，南就是位风牌，南风刻子（或杠）就是位风刻。对西风位玩家：其位风是西，西就是位风牌，西风刻子（或杠）就是位风刻。对北风位玩家：其位风是北，北就是位风牌，北风刻子（或杠）就是位风刻。
+无搭：就是胡牌的时候，手里一张百搭都没有，3百搭的时候，无搭胡牌加一台。
+还搭：百搭当会原来的牌，比如百搭是7条，胡牌的时候，白搭就是当7条用的，这个只出现在3百搭版本中，还搭胡牌加一台。
+ </string>
+					</dict>
+				</array>
+				<key>selected</key>
+				<true/>
+			</dict>
+		</array>
+		<key>customClass</key>
+		<string></string>
+		<key>displayName</key>
+		<string>CCNode</string>
+		<key>memberVarAssignmentName</key>
+		<string></string>
+		<key>memberVarAssignmentType</key>
+		<integer>0</integer>
+		<key>properties</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>contentSize</string>
+				<key>type</key>
+				<string>Size</string>
+				<key>value</key>
+				<array>
+					<real>400</real>
+					<real>3000</real>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>anchorPoint</string>
+				<key>type</key>
+				<string>Point</string>
+				<key>value</key>
+				<array>
+					<real>0.0</real>
+					<real>0.0</real>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>scale</string>
+				<key>type</key>
+				<string>ScaleLock</string>
+				<key>value</key>
+				<array>
+					<real>1</real>
+					<real>1</real>
+					<false/>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>ignoreAnchorPointForPosition</string>
+				<key>type</key>
+				<string>Check</string>
+				<key>value</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>notes</key>
+	<array/>
+	<key>resolutions</key>
+	<array>
+		<dict>
+			<key>centeredOrigin</key>
+			<false/>
+			<key>ext</key>
+			<string>iphone</string>
+			<key>height</key>
+			<integer>0</integer>
+			<key>name</key>
+			<string>iPhone</string>
+			<key>scale</key>
+			<real>1</real>
+			<key>width</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>sequences</key>
+	<array>
+		<dict>
+			<key>autoPlay</key>
+			<true/>
+			<key>callbackChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>10</integer>
+			</dict>
+			<key>chainedSequenceId</key>
+			<integer>-1</integer>
+			<key>length</key>
+			<real>10</real>
+			<key>name</key>
+			<string>Default Timeline</string>
+			<key>offset</key>
+			<real>0.0</real>
+			<key>position</key>
+			<real>0.0</real>
+			<key>resolution</key>
+			<real>30</real>
+			<key>scale</key>
+			<real>128</real>
+			<key>sequenceId</key>
+			<integer>0</integer>
+			<key>soundChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>9</integer>
+			</dict>
+		</dict>
+	</array>
+	<key>stageBorder</key>
+	<integer>3</integer>
+</dict>
+</plist>

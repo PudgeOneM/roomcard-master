@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>centeredOrigin</key>
+	<false/>
+	<key>currentResolution</key>
+	<integer>0</integer>
+	<key>currentSequenceId</key>
+	<integer>0</integer>
+	<key>fileType</key>
+	<string>CocosBuilder</string>
+	<key>fileVersion</key>
+	<integer>4</integer>
+	<key>guides</key>
+	<array/>
+	<key>jsControlled</key>
+	<false/>
+	<key>nodeGraph</key>
+	<dict>
+		<key>baseClass</key>
+		<string>CCNode</string>
+		<key>children</key>
+		<array>
+			<dict>
+				<key>baseClass</key>
+				<string>CCLabelTTF</string>
+				<key>children</key>
+				<array/>
+				<key>customClass</key>
+				<string></string>
+				<key>displayName</key>
+				<string>CCLabelTTF</string>
+				<key>memberVarAssignmentName</key>
+				<string></string>
+				<key>memberVarAssignmentType</key>
+				<integer>0</integer>
+				<key>properties</key>
+				<array>
+					<dict>
+						<key>name</key>
+						<string>position</string>
+						<key>type</key>
+						<string>Position</string>
+						<key>value</key>
+						<array>
+							<real>50</real>
+							<real>50</real>
+							<integer>4</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>anchorPoint</string>
+						<key>type</key>
+						<string>Point</string>
+						<key>value</key>
+						<array>
+							<real>0.5</real>
+							<real>0.5</real>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>scale</string>
+						<key>type</key>
+						<string>ScaleLock</string>
+						<key>value</key>
+						<array>
+							<real>1</real>
+							<real>1</real>
+							<false/>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>ignoreAnchorPointForPosition</string>
+						<key>type</key>
+						<string>Check</string>
+						<key>value</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontName</string>
+						<key>type</key>
+						<string>FontTTF</string>
+						<key>value</key>
+						<string>Helvetica</string>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontSize</string>
+						<key>type</key>
+						<string>FloatScale</string>
+						<key>value</key>
+						<array>
+							<real>24</real>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>dimensions</string>
+						<key>type</key>
+						<string>Size</string>
+						<key>value</key>
+						<array>
+							<real>100</real>
+							<real>100</real>
+							<integer>1</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>horizontalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>verticalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>string</string>
+						<key>type</key>
+						<string>Text</string>
+						<key>value</key>
+						<string>一、基本规则
+1.玩家人数： 4 人
+2.组队：对家的两人为一队
+3.牌数：两幅牌共 108 张牌
+4.出牌顺序:每一局随机选择一张明牌，抓到此牌的玩家得到先出牌的权利。抓到另外一张同样的牌的玩家，和先出牌的玩家成为对家。如果之前的位置不是对家则要和先出牌的玩家的原来的对家位置的玩家交换位置，再开始游戏；如果另一张同样的牌在先出牌的玩家手里，则位置不变。
+5.牌型
+单张：任意一张单牌
+顺子：任意五张或者五张以上点数相连的牌，2和小王不能出现在顺子中。
+对子：任意两张点数相同的牌
+连对：三对或三对以上点数相连的牌，如：556677。2和小王不能出现在连对中。
+三张：任意三张点数相同的牌
+连三张：三个或三个以上点数相连的三张牌，如：555666777。 2 和小王不能出现在连对中。
+炸弹：四张或四张以上点数相同的牌，如：66666。
+三王炸弹：任意三个王的牌型
+天王炸弹：四张王牌
+X 相炸弹： X 张同样的牌组成的炸弹（ 4&lt;=X&lt;=8 ）。如： 777777 （ 6 相炸弹）。
+X 相 Y 连环 炸弹： Y 组点数相连 (3&lt;=Y&lt;=6) 且牌数同为 X 的炸弹。如 777778888 8999 99 （ 5 相 3 连环 炸弹） 2 和小王不能出现在此牌型中。
+大王的特殊作用
+大王（包括两个大王）和别的牌型一起出的时候，可以做任意一张满足牌型需要的万能牌。如果大王可以替代的牌存在一种以上的选择的时候，则选择大的牌型为优先。
+6.牌型比较
+星级的分类和定义：
+特殊牌型：
+三王炸弹： 6 星级
+天王炸弹： 7 星级
+ 
+根据单个炸弹牌型分：
+X 相炸弹：等同于 X 星级。如： 555555 为 6 相炸弹等同于 6 星级。
+根据 X 相 Y 连环 炸弹牌型分：星级＝ X+Y
+
+普通牌型的大小：
+单张、顺子、对子、连对、三张、连三张的牌型，直接根据牌型中最大牌的点数比较大小，但要求牌型和牌数量必须相同。
+
+炸弹：
+炸弹大于任何其他非炸弹的牌型。
+同为炸弹的牌型，先按照星级比较大小；如果星级相同，则按照牌的数量比较大小，数量越少的越大；如过数量相同，则按照牌型中最大牌的点数比较大小。
+特殊：天王炸弹是 7 星牌里面最大的牌型，三王炸弹是 6 星牌里面最小的牌型。
+
+
+二、计分规则
+名次决定：
+按照出完牌的顺序决定名次，当双扣的情况按照出牌顺序排定第三名和第四名。
+当一队的两个玩家都先将牌出完，而另外一方的两家都没有出完，则为双扣。
+当一队有一个第一名出完，一个第三名出完，则为单扣。
+当一队有一个第一名，一个第四名，为平扣。
+ 
+基本分得分表：
+ 	第一名	第二名	第三名	第四名
+双扣	4	4	-4	-4
+单扣	2	-2	2	-2
+平扣	1	-1	-1	1
+	  
+翻倍的计算：
+胜方在游戏过程中如果出过以下的牌型，则可以相应的将基本分翻倍（负方也翻倍），如果重复出现翻倍条件则只计算一次最大的翻倍。
+胜方有 5 星级基本分× 2
+胜方有 6 星级基本分× 4
+胜方有 7 星级基本分× 8
+胜方有 8 星级以上基本分× 16
+
+贡献分的计算：
+六星牌型：本家加 6 分，其他玩家各减2分。
+七星牌型：本家加 12 分，其他玩家各减4 分。
+八星和以上牌型：本家加 18 分，其他玩家各减6 分。
+ 
+游戏最后得分应该是：基本分×翻倍数＋贡献分 。
+
+</string>
+					</dict>
+				</array>
+				<key>selected</key>
+				<true/>
+			</dict>
+		</array>
+		<key>customClass</key>
+		<string></string>
+		<key>displayName</key>
+		<string>CCNode</string>
+		<key>memberVarAssignmentName</key>
+		<string></string>
+		<key>memberVarAssignmentType</key>
+		<integer>0</integer>
+		<key>properties</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>contentSize</string>
+				<key>type</key>
+				<string>Size</string>
+				<key>value</key>
+				<array>
+					<real>400</real>
+					<real>3500</real>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>anchorPoint</string>
+				<key>type</key>
+				<string>Point</string>
+				<key>value</key>
+				<array>
+					<real>0.0</real>
+					<real>0.0</real>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>scale</string>
+				<key>type</key>
+				<string>ScaleLock</string>
+				<key>value</key>
+				<array>
+					<real>1</real>
+					<real>1</real>
+					<false/>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>ignoreAnchorPointForPosition</string>
+				<key>type</key>
+				<string>Check</string>
+				<key>value</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>notes</key>
+	<array/>
+	<key>resolutions</key>
+	<array>
+		<dict>
+			<key>centeredOrigin</key>
+			<false/>
+			<key>ext</key>
+			<string>iphone</string>
+			<key>height</key>
+			<integer>0</integer>
+			<key>name</key>
+			<string>iPhone</string>
+			<key>scale</key>
+			<real>1</real>
+			<key>width</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>sequences</key>
+	<array>
+		<dict>
+			<key>autoPlay</key>
+			<true/>
+			<key>callbackChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>10</integer>
+			</dict>
+			<key>chainedSequenceId</key>
+			<integer>-1</integer>
+			<key>length</key>
+			<real>10</real>
+			<key>name</key>
+			<string>Default Timeline</string>
+			<key>offset</key>
+			<real>0.0</real>
+			<key>position</key>
+			<real>0.0</real>
+			<key>resolution</key>
+			<real>30</real>
+			<key>scale</key>
+			<real>128</real>
+			<key>sequenceId</key>
+			<integer>0</integer>
+			<key>soundChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>9</integer>
+			</dict>
+		</dict>
+	</array>
+	<key>stageBorder</key>
+	<integer>3</integer>
+</dict>
+</plist>

@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>centeredOrigin</key>
+	<false/>
+	<key>currentResolution</key>
+	<integer>0</integer>
+	<key>currentSequenceId</key>
+	<integer>0</integer>
+	<key>fileType</key>
+	<string>CocosBuilder</string>
+	<key>fileVersion</key>
+	<integer>4</integer>
+	<key>guides</key>
+	<array>
+		<dict>
+			<key>orientation</key>
+			<integer>0</integer>
+			<key>position</key>
+			<real>-339</real>
+		</dict>
+	</array>
+	<key>jsControlled</key>
+	<false/>
+	<key>nodeGraph</key>
+	<dict>
+		<key>baseClass</key>
+		<string>CCNode</string>
+		<key>children</key>
+		<array>
+			<dict>
+				<key>baseClass</key>
+				<string>CCLabelTTF</string>
+				<key>children</key>
+				<array/>
+				<key>customClass</key>
+				<string></string>
+				<key>displayName</key>
+				<string>CCLabelTTF</string>
+				<key>memberVarAssignmentName</key>
+				<string></string>
+				<key>memberVarAssignmentType</key>
+				<integer>0</integer>
+				<key>properties</key>
+				<array>
+					<dict>
+						<key>name</key>
+						<string>position</string>
+						<key>type</key>
+						<string>Position</string>
+						<key>value</key>
+						<array>
+							<real>50</real>
+							<real>50</real>
+							<integer>4</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>anchorPoint</string>
+						<key>type</key>
+						<string>Point</string>
+						<key>value</key>
+						<array>
+							<real>0.5</real>
+							<real>0.5</real>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>scale</string>
+						<key>type</key>
+						<string>ScaleLock</string>
+						<key>value</key>
+						<array>
+							<real>1</real>
+							<real>1</real>
+							<false/>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>ignoreAnchorPointForPosition</string>
+						<key>type</key>
+						<string>Check</string>
+						<key>value</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontName</string>
+						<key>type</key>
+						<string>FontTTF</string>
+						<key>value</key>
+						<string>Helvetica</string>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>fontSize</string>
+						<key>type</key>
+						<string>FloatScale</string>
+						<key>value</key>
+						<array>
+							<real>24</real>
+							<integer>0</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>dimensions</string>
+						<key>type</key>
+						<string>Size</string>
+						<key>value</key>
+						<array>
+							<real>100</real>
+							<real>100</real>
+							<integer>1</integer>
+						</array>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>horizontalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>verticalAlignment</string>
+						<key>type</key>
+						<string>IntegerLabeled</string>
+						<key>value</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>name</key>
+						<string>string</string>
+						<key>type</key>
+						<string>Text</string>
+						<key>value</key>
+						<string>灰色玩家出牌，白色牌堆揭牌
+名词解释：
+1.砌牌：庄家砌21张，其他2人砌20张，墩上留19张做底牌，庄家砌的最后一张牌（第21张）必须亮张。
+2.一对牌：砌牌后，手中2个相同的牌为1对。
+4. 一坎牌：砌牌后，手中3个相同的牌为1坎。一坎牌不能拆散与其他牌组合。
+5. 一提牌：砌牌后，手中4个相同的牌为1提。一提牌不能拆散与其他牌组合。庄家在出牌前亮示，闲家轮到自己摸牌前和吃上家的牌或碰牌进张前提。
+6.一句话：砌牌后，手中的牌依据规则组合成相连的三张或二、七、十（贰柒拾）。
+7. 绞牌：当1对大牌与1张相同的小牌，或者1对小牌与1张相同的大牌组合时，成为绞牌。如1对小九与1张大玖。
+8. 一方门子：比如一句话，一绞牌，一碰，一提，一偎，一跑都称为1方门子。
+
+出牌规则：
+1.吃牌：当上家打出或摸出一只牌，或玩家自己摸出一只牌，可以和玩家的牌合成一句话或绞牌时，玩家可以吃牌。吃牌后将三只牌全部明示于桌面。
+  如果玩家手上有与吃的牌相同的牌必须将手中的牌根据某种组合,也必须放到桌面。
+  如果玩家手上有与吃的牌相同的牌，但不能和手上剩下的组合，这时候不能吃牌。
+2.碰牌：玩家手中有一对牌，当其他玩家打出或摸出一只相同的牌，则可以碰牌，碰牌后将三只牌全部明示于桌面。
+3.忍碰：当玩家有机会碰牌，但玩家考虑根据实际情况自愿不碰的，称为忍碰。
+4.偎牌：玩家手中有一对牌，当自己摸起一只相同的牌，玩家必须将手中的一对连同摸起的牌放置于桌面，且不能明示给其它玩家，称为偎。
+5.臭偎：当玩家忍碰后，玩家自己又偎牌，称为“臭偎”，臭偎必须一只牌明示，另两只暗置于桌面。
+6.提：
+起手摸上来的四张一样的牌，手中有提后必须放置于桌面，并且明示各玩家；玩家手中有一坎或桌面上已有偎的牌，当玩家自摸起相同的一只牌后，必须提起，明示各玩家。一只牌向上，三只牌反向桌面放置。
+7.跑：
+玩家手中有一坎或桌面上已有偎的牌，当其他玩家打出或摸出相同的牌后，必须跑牌；玩家桌面已有碰的牌，当自己或其他玩家摸出相同的牌后，必须跑牌。4只牌明示于桌面。
+7.八块：当玩家已经跑过牌或提过牌，再跑时或再提牌时称为八块，此时玩家不能打出手中的牌，而由下家继续摸牌。
+8.过张：玩家可以吃、碰。却选择了不吃、不碰时，第二次牌桌上再出现同张牌时，该玩家不得再吃或者再碰。
+
+胡牌规则：
+1.至少有15胡息。
+2.胡牌必须胡墩上的，示众后的牌，可以胡过张，不能胡别人手牌中打出的牌，不能胡别人提、偎、臭偎的牌。
+3.手里的与桌面上的牌组合有7方门子。
+
+
+胡数计算： 
+牌型	                 
+碰:大字3胡；小字1胡
+坎、偎或臭偎:大字6胡；小字3胡
+跑: 大字9胡；小字6胡
+提:大字12胡；小字9胡
+壹贰叁（一二三）：大字6胡；小字3胡
+贰柒拾（二七十）：大字6胡；小字3胡
+其他的绞、一句话：大字0胡；小字0胡
+
+囤=（胡数-12）/3
+
+名堂
+全名堂1（6-8番）：
+点胡:红字张数=1(4番)
+红胡:红字张数&gt;=10，每多1张红字加1番(2+n番)
+乌胡:红字张数=0(6番)
+对对胡:门子由碰/提/跑/偎/对子组成(6番)
+大:大字&gt;=18张（6番）
+小:小字&gt;=16张(8番)
+海底胡:胡桌上墩中最后的一张牌(6番)
+天胡:起手胡牌/3提或5坎(6番)
+地胡:闲家胡亮张(6番)
+停胡:没进张就胡牌(6番)
+
+全名堂2（8-10番）:
+点胡:红字张数=1(6番)
+红胡:红字张数&gt;=10，每多1张红字加1番(3+n番)
+乌胡:红字张数=0(8番)
+对对胡:门子由碰/提/跑/偎/对子组成(8番)
+大:大字&gt;=18张,每多1张大字加1番(8+n番)
+小:小字&gt;=16张，每多1张小字加1番(10+n番)
+海底胡:胡桌上墩中最后的一张牌(6番)
+天胡:起手胡牌/3提或5坎(6番)
+地胡:闲家胡亮张(6番)
+耍猴胡:手上只剩单独一张，单吊胡牌(8番)
+停胡:没进张就胡牌(6番)
+黄番:上局荒庄，下次胡牌总囤数*2
+项项胡:手上7方门子都带有胡值，为真项(8);手上6方门子都带有胡值，为假项(6番)
+团团胡:相同的小字和大字都跑起或者提起(8番)                                           
+得分计算：
+得分=手牌囤数*名堂番数
+赢家:总数=（单局得分按囤数*名堂番数）*2</string>
+					</dict>
+				</array>
+				<key>selected</key>
+				<true/>
+			</dict>
+		</array>
+		<key>customClass</key>
+		<string></string>
+		<key>displayName</key>
+		<string>CCNode</string>
+		<key>memberVarAssignmentName</key>
+		<string></string>
+		<key>memberVarAssignmentType</key>
+		<integer>0</integer>
+		<key>properties</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>contentSize</string>
+				<key>type</key>
+				<string>Size</string>
+				<key>value</key>
+				<array>
+					<real>400</real>
+					<real>4500</real>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>anchorPoint</string>
+				<key>type</key>
+				<string>Point</string>
+				<key>value</key>
+				<array>
+					<real>0.0</real>
+					<real>0.0</real>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>scale</string>
+				<key>type</key>
+				<string>ScaleLock</string>
+				<key>value</key>
+				<array>
+					<real>1</real>
+					<real>1</real>
+					<false/>
+					<integer>0</integer>
+				</array>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>ignoreAnchorPointForPosition</string>
+				<key>type</key>
+				<string>Check</string>
+				<key>value</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>notes</key>
+	<array/>
+	<key>resolutions</key>
+	<array>
+		<dict>
+			<key>centeredOrigin</key>
+			<false/>
+			<key>ext</key>
+			<string>iphone</string>
+			<key>height</key>
+			<integer>0</integer>
+			<key>name</key>
+			<string>iPhone</string>
+			<key>scale</key>
+			<real>1</real>
+			<key>width</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>sequences</key>
+	<array>
+		<dict>
+			<key>autoPlay</key>
+			<true/>
+			<key>callbackChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>10</integer>
+			</dict>
+			<key>chainedSequenceId</key>
+			<integer>-1</integer>
+			<key>length</key>
+			<real>10</real>
+			<key>name</key>
+			<string>Default Timeline</string>
+			<key>offset</key>
+			<real>0.0</real>
+			<key>position</key>
+			<real>0.0</real>
+			<key>resolution</key>
+			<real>30</real>
+			<key>scale</key>
+			<real>32</real>
+			<key>sequenceId</key>
+			<integer>0</integer>
+			<key>soundChannel</key>
+			<dict>
+				<key>keyframes</key>
+				<array/>
+				<key>type</key>
+				<integer>9</integer>
+			</dict>
+		</dict>
+	</array>
+	<key>stageBorder</key>
+	<integer>3</integer>
+</dict>
+</plist>
