@@ -1,0 +1,146 @@
+在games目录下创建一个‘mygames’文件夹
+然后将自己的游戏checkout到这个目录下
+
+
+
+
+
+
+
+开启网页工具流程：（命令行输入）
+1、cd到poker文件夹目录
+2、node tools\bin\www
+3、浏览器输入localhost 
+
+
+发布流程：
+1、开启网页工具
+2、点击‘发布游戏’ 
+3、选择目标游戏
+4、点击‘publish’
+5、发布的游戏文件夹就在poker/publish文件夹下
+
+
+————————————————————————————————————————————————————
+
+代码结构
+a、public/src 所有游戏共用 一改全改
+b、components 可定制的使用 
+c、game/src
+
+a下变量可以被a、b、c访问 
+b下变量可以被b、c访问
+c下变量只能自己内部(c)访问
+
+
+————————————————————————————————————————————————————
+
+client的目录结构 （主要用于编码）
+public文件夹（除了cocos的模块是个超集 其他部分都是每个游戏必定用到才会放到public）
+	.cocos-project.json 只是用来使cocos campile正常运行
+	index.html 只是用来使cocos campile正常运行 
+	main.js  只是用来使cocos campile正常运行
+	start.js 网页启动载入的第一个js 
+	projectCocos.json 发布cocos引擎部分 不需要填写jsList  唯一的作用就是得到cocos的引擎代码 
+	projectGameFrame.json  整个游戏的项目配置 发布整个游戏框架部分（包括cocos） 需要填写jsList 基础变量需要写前面先压缩 
+	res 所有游戏共用的素材
+	src 所有游戏共用的代码
+
+
+games文件夹
+	components 可选的共用组件代码（不包含res 如果是ui组件资源通过外部传入路径）
+	单个游戏
+	niuniu文件夹
+		res文件夹 单个游戏的素材
+		src文件夹 单个游戏的代码
+		index.html 
+		main.js
+		baseData.js 基础变量需要先压缩  否则在基础变量赋值前调用 值会是undifined
+  		package.json 配置游戏代码加载
+
+publish文件夹  
+	公共部分
+	public.min.js 所有游戏共用的代码 包括cocos引擎的代码和游戏本身设计的公共部分代码
+	project.json 所有游戏共用
+	res 包含了所有游戏共用的资源图片  
+	start.js
+	单个游戏包含
+	niuniu.min.js 单个游戏的代码  （会将用到的组件一起打包到这个js里）
+	niuniures文件夹 单个游戏的素材 （包含组件用到的素材）
+	//扑克牌的图片 应该放到组件里 因为麻将这些不会用到
+	//不同游戏会同时包含相同的资源 比如每个扑克牌游戏的res里都会有牌的图片资源 增加了大小 但相比放到公共资源里更灵活 
+	niuniu.html
+
+runtime文件夹
+	niuniu.html  
+	project.json
+	1res  软连接
+	res 软连接
+	public/src 软连接
+
+tools文件夹(需要安装nodejs)
+	client文件夹
+	index.html  工具主页 
+		1、运行游戏 
+		2、发布游戏 
+		3、c2js 
+		4、发布公共部分
+		5、生成游戏代码（通过网页设置 自动生成游戏代码 节省时间）
+		...
+	server文件夹
+		作为tools + porker的server
+
+startTools脚本
+用于开启tools的服务
+
+————————————————————————————————————————————————————
+
+
+1、运行游戏
+页面会显示client目录下所有的游戏，通过勾选选择需要运行的游戏
+	清空runtime文件夹
+	软连接public/res
+	cp public/project.json
+假如需要运行niuniu
+	软连接niuniures
+	生成niuniu.html
+
+这样的话 代码改动了刷新下网页就可以看到效果
+可以同时运行多个游戏 每个游戏都是在新页面中打开
+
+
+2、发布Cocos 发布GameFrame
+	会cd到public 调用cocos的campile命令 
+
+3、发布游戏  
+页面会显示目录下所有的游戏，通过勾选选择需要发布的游戏
+
+流程：
+公共部分
+	将public/publishGameFrame/game.min.js 将其存为publish/public.min.js
+	将public/publishGameFrame/res文件夹 将其存为publish/res
+	将public/publishGameFrame/project.json 将其存为publish/project.json
+	将public/start.js 将其存为publish/start.js
+	
+假如需要发布niuniu
+	将niuniu/res文件夹 存到publish/niuniures
+	根据niuniu/index.html 生成publish/niuniu.html
+	遍历packagejson合并打包(网上有打包源码)生成niuniu.min.js将其存到publish
+
+
+4、生成游戏代码
+
+
+注意：
+基础变量需要先压缩  否则在基础变量赋值前调用 值会是undifined
+function xxx (){}格式声明函数  这样即使声明前调用也不会报错
+var xxx 格式声明变量    这样即使声明前调用也不会报错
+
+src文件夹下
+然后根据文件夹名或文件名首字母顺序编译
+
+
+
+
+
+

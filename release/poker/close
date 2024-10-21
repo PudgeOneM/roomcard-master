@@ -1,0 +1,11 @@
+#!/bin/bash
+function run(){
+
+	cd `dirname $0`
+	for line in `cat tools/bin/.pid`
+	do
+	    sudo kill $line
+	done
+
+}
+run
