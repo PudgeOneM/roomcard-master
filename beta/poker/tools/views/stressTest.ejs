@@ -1,0 +1,122 @@
+<% include header.ejs %>
+<script src="/javascripts/stressTest.js"></script>
+<%- tips %> 
+
+  <HR align=left width="420px" color=#000000 SIZE=1>
+   <form  method="post">
+   <table border="0" cellspacing="2" cellpadding="2">
+   <tr>
+   <td>创建房间:</td>
+     <td><input type="text" name= "createRoom" style="width:100px;display:none"
+     <td></td>
+     <td></td>
+     <td><input type="submit" value="开始测试" style="width:80px;float:right" /></td>
+   </tr>
+   <tr>
+     <td></td>
+   </tr>
+   <tr>
+     <td>创建者起始id:</td>
+     <td><input type="text" name= "userBeginId" style="width:100px;" value="1-2000" onfocus="if(value==\'1-2000\'){value=\'\'}" onblur="if(value==\'\'){value=\'1-2000\'}"/></td>
+     <td>创建者结束id:</td>
+     <td><input type="text" name= "userEndId" style="width:100px;" value="1-2000" onfocus="if(value==\'1-2000\'){value=\'\'}" onblur="if(value==\'\'){value=\'1-2000\'}"/></td>
+   </tr>
+   <tr>
+     <td>发送间隔:</td>
+     <td><input type="text" name= "sendInterval" style="width:100px;" value="单位毫秒" onfocus="if(value==\'单位毫秒\'){value=\'\'}" onblur="if(value==\'\'){value=\'单位毫秒\'}" /></td>
+     <td>超时时间:</td>
+     <td><input type="text" name= "timeout" style="width:100px;" value="单位毫秒" onfocus="if(value==\'单位毫秒\'){value=\'\'}" onblur="if(value==\'\'){value=\'单位毫秒\'}"/></td>
+   </tr>
+   </table>
+   </form>
+
+   <HR align=left width="420px" color=#000000 SIZE=1>
+   <form  method="post">
+   <table border="0" cellspacing="2" cellpadding="2">
+   <tr>
+   <td>充满房间:</td>
+     <td><input type="text" name= "fillRoom" style="width:100px;display:none"
+     <td></td>
+     <td></td>
+     <td><input type="submit" value="开始测试" style="width:80px;float:right" /></td>
+   </tr>
+   <tr>
+     <td></td>
+   </tr>
+   <tr>
+     <td>创建者起始id:</td>
+     <td><input type="text" name= "userBeginId" style="width:100px;" value="1-2000" onfocus="if(value==\'1-2000\'){value=\'\'}" onblur="if(value==\'\'){value=\'1-2000\'}"/></td>
+     <td>创建者结束id:</td>
+     <td><input type="text" name= "userEndId" style="width:100px;" value="1-2000" onfocus="if(value==\'1-2000\'){value=\'\'}" onblur="if(value==\'\'){value=\'1-2000\'}"/></td>
+   </tr>
+   <tr>
+     <td>发送间隔:</td>
+     <td><input type="text" name= "sendInterval" style="width:100px;" value="单位毫秒" onfocus="if(value==\'单位毫秒\'){value=\'\'}" onblur="if(value==\'\'){value=\'单位毫秒\'}" /></td>
+     <td>超时时间:</td>
+     <td><input type="text" name= "timeout" style="width:100px;" value="单位毫秒" onfocus="if(value==\'单位毫秒\'){value=\'\'}" onblur="if(value==\'\'){value=\'单位毫秒\'}"/></td>
+   </tr>
+   </table>
+   </form>
+
+   <HR align=left width="420px" color=#000000 SIZE=1>
+   <form  method="post">
+   <table border="0" cellspacing="2" cellpadding="2">
+   <tr>
+   <td>开始游戏:</td>
+     <td><input type="text" name= "startGame" style="width:100px;display:none"
+     <td></td>
+     <td></td>
+     <td><input type="submit" value="开始测试" style="width:80px;float:right" /></td>
+   </tr>
+   <tr>
+     <td></td>
+   </tr>
+   <tr>
+     <td>创建者起始id:</td>
+     <td><input type="text" name= "userBeginId" style="width:100px;" value="1-2000" onfocus="if(value==\'1-2000\'){value=\'\'}" onblur="if(value==\'\'){value=\'1-2000\'}"/></td>
+     <td>创建者结束id:</td>
+     <td><input type="text" name= "userEndId" style="width:100px;" value="1-2000" onfocus="if(value==\'1-2000\'){value=\'\'}" onblur="if(value==\'\'){value=\'1-2000\'}"/></td>
+   </tr>
+   <tr>
+     <td>发送间隔:</td>
+     <td><input type="text" name= "sendInterval" style="width:100px;" value="单位毫秒" onfocus="if(value==\'单位毫秒\'){value=\'\'}" onblur="if(value==\'\'){value=\'单位毫秒\'}" /></td>
+     <td>超时时间:</td>
+     <td><input type="text" name= "timeout" style="width:100px;" value="单位毫秒" onfocus="if(value==\'单位毫秒\'){value=\'\'}" onblur="if(value==\'\'){value=\'单位毫秒\'}"/></td>
+   </tr>
+   </table>
+   </form>
+
+   <HR align=left width="420px" color=#000000 SIZE=1>
+   <form  method="post">
+   <table border="0" cellspacing="2" cellpadding="2">
+   <tr>
+   <td>一轮游戏:</td>
+     <td><input type="text" name= "playGame" style="width:100px;display:none"
+     <td></td>
+     <td></td>
+     <td><input type="submit" value="开始测试" style="width:80px;float:right" /></td>
+   </tr>
+   <tr>
+     <td></td>
+   </tr>
+   <tr>
+     <td>创建者起始id:</td>
+     <td><input type="text" name= "userBeginId" style="width:100px;" value="1-2000" onfocus="if(value==\'1-2000\'){value=\'\'}" onblur="if(value==\'\'){value=\'1-2000\'}"/></td>
+     <td>创建者结束id:</td>
+     <td><input type="text" name= "userEndId" style="width:100px;" value="1-2000" onfocus="if(value==\'1-2000\'){value=\'\'}" onblur="if(value==\'\'){value=\'1-2000\'}"/></td>
+   </tr>
+   <tr>
+     <td>发送间隔:</td>
+     <td><input type="text" name= "sendInterval" style="width:100px;" value="单位毫秒" onfocus="if(value==\'单位毫秒\'){value=\'\'}" onblur="if(value==\'\'){value=\'单位毫秒\'}" /></td>
+     <td>超时时间:</td>
+     <td><input type="text" name= "timeout" style="width:100px;" value="单位毫秒" onfocus="if(value==\'单位毫秒\'){value=\'\'}" onblur="if(value==\'\'){value=\'单位毫秒\'}"/></td>
+   </tr>
+   </table>
+   </form>
+   <HR align=left width="420px" color=#000000 SIZE=1>
+
+
+   <br><button onclick="restartServer()" style="position:absolute;left:400px">重启服务器</button>
+
+
+<% include footer.ejs %>

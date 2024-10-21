@@ -1,0 +1,20 @@
+#!/bin/bash
+function clearSvn()
+{
+	cd $1
+	echo $1
+    cfilelist=$(ls -A)
+    for cfilename in $cfilelist  
+    do   
+    	if [[ $cfilename == .svn ]]
+        then   
+        	sudo rm -rf $cfilename
+        elif [ -d $cfilename ]
+        then
+            clearSvn $(pwd)"/"$cfilename
+        fi
+    done 
+    cd ..
+}
+
+clearSvn $1

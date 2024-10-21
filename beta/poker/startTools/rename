@@ -1,0 +1,18 @@
+#!/bin/bash
+function rename()
+{
+	cd $1
+	echo $1
+    cfilelist=$(ls -A)
+    for cfilename in $cfilelist  
+    do   
+        if [[ $cfilename != .DS_Store ]]
+        then 
+            s=$cfilename
+            arr=(${s//_/ })  
+            mv $cfilename 's1_'${arr[1]}$'_'${arr[2]}
+        fi
+    done 
+}
+
+rename $1
