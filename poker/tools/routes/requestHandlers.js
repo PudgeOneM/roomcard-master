@@ -240,8 +240,25 @@ function publishGame(gameName)
       // child_process.execSync(copyfileS('public/publish/html5/project.json', 'publish/' + idx))
       child_process.execSync(copyfileS('public/publish/html5/game.min.js', 'publish/' + idx + '/cocos.min.js'))
       child_process.execSync(mkdirS('publish/' + idx + '/res'))
-      child_process.execSync(copydirS('games/mygames/' + gameName + '/res/gameRes', 'publish/' + idx + '/res'))
-      child_process.execSync(copydirS('public/res/publicRes', 'publish/' + idx + '/res'))
+      
+      function copyDirectory(source, target) {
+          fs.mkdirSync(target, { recursive: true }); // 确保目标目录存在
+          const files = fs.readdirSync(source);
+          files.forEach(file => {
+              const sourceFile = path.join(source, file);
+              const targetFile = path.join(target, file);
+              if (fs.lstatSync(sourceFile).isDirectory()) {
+                  copyDirectory(sourceFile, targetFile); // 递归复制目录
+              } else {
+                  fs.copyFileSync(sourceFile, targetFile); // 复制文件
+              }
+          });
+      }
+      copyDirectory('games/mygames/' + gameName + '/res/gameRes', 'publish/' + idx + '/res/gameRes')
+      copyDirectory('public/res/publicRes', 'publish/' + idx + '/res/publicRes')
+
+      // child_process.execSync(copydirS('games/mygames/' + gameName + '/res/gameRes', 'publish/' + idx + '/res/gameRes'))
+      // child_process.execSync(copydirS('public/res/publicRes', 'publish/' + idx + '/res/publicRes'))
       child_process.execSync(copyfileS('public/start.js', 'publish/' + idx) )
       // child_process.execSync(copyfileS('public/worker.js', 'publish/' + idx) )
       child_process.execSync(copyfileS('public/conf.js', 'publish/' + idx) )
@@ -312,12 +329,14 @@ function publishGame(gameName)
       [
         'games/mygames/' + gameName
       ]
-      var minifyJsArray = getPathsWithRequire(requirePathPrefix, 'conf.js')
-      minifyJs(minifyJsArray, 'publish/' + idx + '/conf.js', true)
+      console.log(`------------------------------`,requirePathPrefix);
 
+      var minifyJsArray = getPathsWithRequire(requirePathPrefix, 'conf.js')
+      minifyJs(minifyJsArray, 'publish/' + idx + '/conf.js');
+      
 
       minifyJs(['publish/' + idx + '/start.js'], 'publish/' + idx + '/start.js')
-      
+
       var requirePathPrefix = 
       [
         'public'
@@ -335,11 +354,28 @@ function publishGame(gameName)
 
       minifyJs(minifyJsArray, 'publish/' + idx + '/game.min.js')
 
-      var md5_conf = hex_md5(fs.readFileSync('publish/' + idx + '/conf.js').toString())
-      var md5_start = hex_md5(fs.readFileSync('publish/' + idx + '/start.js').toString())
-      var md5_cocos = hex_md5(fs.readFileSync('publish/' + idx + '/cocos.min.js').toString())
-      var md5_public = hex_md5(fs.readFileSync('publish/' + idx + '/public.min.js').toString())
-      var md5_game = hex_md5(fs.readFileSync('publish/' + idx + '/game.min.js').toString())
+      var md5_conf
+      var md5_start
+      var md5_cocos
+      var md5_public
+      var md5_game
+      // 这里不做延迟的话会提示找不到文件
+      setTimeout(() => {
+        md5_conf = hex_md5(fs.readFileSync('publish/' + idx + '/conf.js').toString())
+        console.log('md5_conf  MD5 值:', md5_conf);
+        
+        md5_start = hex_md5(fs.readFileSync('publish/' + idx + '/start.js').toString())
+        console.log('md5_start  MD5 值:', md5_start);
+
+        md5_cocos = hex_md5(fs.readFileSync('publish/' + idx + '/cocos.min.js').toString())
+        console.log('md5_cocos  MD5 值:', md5_cocos);
+
+        md5_public = hex_md5(fs.readFileSync('publish/' + idx + '/public.min.js', 'utf8'))
+        console.log('md5_public  MD5 值:', md5_public);
+
+        md5_game = hex_md5(fs.readFileSync('publish/' + idx + '/game.min.js').toString())
+        console.log('md5_game  MD5 值:', md5_game);
+      }, 1000); 
       
       //自定义加载方式  缓存public.min.js
       var appendHtml = 
@@ -360,13 +396,13 @@ function publishGame(gameName)
       '<script type="text/javascript">' + '\n' +
           'var resPath2Md5Map = ' + JSON.stringify(resPath2Md5Map) + '\n' +
           'var params = [' + '\n' 
-
+          
       for(var i in base64ResParams)
       {
         var str = '{"url":"'+base64ResParams[i].url+'","callback":null,"isDependLocalStorage":true,"md5":"' + base64ResParams[i].md5 + '"},' + '\n'
         appendHtml = appendHtml + str
       }
-      
+
       appendHtml = appendHtml + '{"url":"cocos.min.js","callback":null,"isDependLocalStorage":false,"md5":"' + md5_cocos + '"},' + '\n' +
               '{"url":"public.min.js","callback":null,"isDependLocalStorage":false,"md5":"' + md5_public + '"},' + '\n' +
               '{"url":"game.min.js","callback":null,"isDependLocalStorage":false,"md5":"' + md5_game + '"},' + '\n' +

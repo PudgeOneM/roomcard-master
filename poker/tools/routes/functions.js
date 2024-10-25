@@ -2,6 +2,7 @@
 var fs = require('fs')
 var path = require('path')
 var uglifyjs = require("uglify-js")
+var Terser = require('terser');
 
 
 //将非stringl类型递归转化为string
@@ -304,38 +305,54 @@ walkFiles = function(filePath, floor, handleFile)
             handleFile(tmpPath, floor)  
         }
     }) 
-}  
+}
 
+minifyJs = async function(srcPaths, targetPath, isAppend) {
+    const jsArray = [];
 
-minifyJs = function(srcPaths, targetPath, isAppend) 
-{
-    var jsArray = []
-
-    for(var i in srcPaths)
-    {   
-        var srcPath = srcPaths[i]
-        if(path.extname(srcPath) == '.js')
-        {
-            jsArray[jsArray.length] = srcPath
+    srcPaths.forEach(srcPath => {
+        if (path.extname(srcPath) === '.js') {
+            jsArray.push(path.resolve(srcPath)); // 使用绝对路径
+        } else {
+            walkFiles(srcPath, 0, handleFile);
         }
-        else
-        {
-            walkFiles(srcPath, 0, handleFile) 
+    });
+
+    console.log('JS Files to minify:', jsArray);
+
+    function handleFile(filePath) {
+        if (path.extname(filePath) === '.js') {
+            jsArray.push(path.resolve(filePath)); // 使用绝对路径
         }
     }
 
-    function handleFile(filePath) 
-    {       
-        if(path.extname(filePath) == '.js')
-            {
-            jsArray[jsArray.length] = filePath
+    if (jsArray.length === 0) {
+        console.error('没有找到要压缩的 JavaScript 文件。');
+        return;
+    }
+
+    try {
+        const minifiedCodes = await Promise.all(jsArray.map(file => minifyWithTerser(file)));
+        
+        const resultCode = minifiedCodes.join('\n'); // 合并所有压缩后的代码
+
+        if (isAppend) {
+            fs.appendFileSync(targetPath, resultCode);
+        } else {
+            fs.writeFileSync(targetPath, resultCode);
         }
-    }  
-    var result = uglifyjs.minify(jsArray) 
-    if(isAppend)
-        fs.appendFileSync(targetPath, result.code)
-    else
-        fs.writeFileSync(targetPath, result.code)
+    } catch (error) {
+        console.error('处理过程中发生错误:', error);
+    }
+}
+
+async function minifyWithTerser(file) {
+    const code = fs.readFileSync(file, 'utf8');
+    const result = await Terser.minify(code);
+    if (result.error) {
+        throw new Error(`压缩失败: ${result.error.message}`);
+    }
+    return result.code;
 }
 
 /////////////////////////md5 start////////////////////
@@ -591,6 +608,10 @@ copydirS = function(sourceDir, targetDir)
     targetDir = targetDir.replace(/\//g, path.sep)
 
     var cmd = ( process.platform=='win32'?'xcopy /e /h ':'cp -r ' ) + sourceDir + ' ' + targetDir
+    // xcopy "games\mygames\16_东阳四副牌\res\gameRes" "publish\16\res\gameRes" /e /h
+    // xcopy "public/res/publicRes" "publish\16\res\publicRes" /e /h
+
+    console.log('Generated command:', cmd);
     return cmd
 }
 
