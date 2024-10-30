@@ -85,7 +85,7 @@ function onListening() {
 
   var fs = require("fs")
 
-  fs.writeFileSync('tools/bin/.pid', process.pid)
+  fs.writeFileSync('tools/bin/.pid', String(process.pid))
 
   process.on('exit', function()  //强制退出不会触发
   { 

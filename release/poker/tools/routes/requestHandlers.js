@@ -239,11 +239,28 @@ function publishGame(gameName)
       child_process.execSync(mkdirS('publish/' + idx))
       child_process.execSync(mkdirS('publish/' + idx + '/base64Res'))
       child_process.execSync(copyfileS('games/mygames/' + gameName + '/index.html', 'publish/' + idx))
-      child_process.execSync(copyfileS('public/publish/html5/project.json', 'publish/' + idx))
+      // child_process.execSync(copyfileS('public/publish/html5/project.json', 'publish/' + idx))
       child_process.execSync(copyfileS('public/publish/html5/game.min.js', 'publish/' + idx + '/cocos.min.js'))
       child_process.execSync(mkdirS('publish/' + idx + '/res'))
-      child_process.execSync(copydirS('games/mygames/' + gameName + '/res/gameRes', 'publish/' + idx + '/res'))
-      // child_process.execSync(copydirS('public/res/publicRes', 'publish/' + idx + '/res'))
+      
+      function copyDirectory(source, target) {
+          fs.mkdirSync(target, { recursive: true }); // 确保目标目录存在
+          const files = fs.readdirSync(source);
+          files.forEach(file => {
+              const sourceFile = path.join(source, file);
+              const targetFile = path.join(target, file);
+              if (fs.lstatSync(sourceFile).isDirectory()) {
+                  copyDirectory(sourceFile, targetFile); // 递归复制目录
+              } else {
+                  fs.copyFileSync(sourceFile, targetFile); // 复制文件
+              }
+          });
+      }
+      copyDirectory('games/mygames/' + gameName + '/res/gameRes', 'publish/' + idx + '/res/gameRes')
+      copyDirectory('public/res/publicRes', 'publish/' + idx + '/res/publicRes')
+
+      // child_process.execSync(copydirS('games/mygames/' + gameName + '/res/gameRes', 'publish/' + idx + '/res/gameRes'))
+      // child_process.execSync(copydirS('public/res/publicRes', 'publish/' + idx + '/res/publicRes'))
       child_process.execSync(copyfileS('public/start.js', 'publish/' + idx) )
       // child_process.execSync(copyfileS('public/worker.js', 'publish/' + idx) )
       child_process.execSync(copyfileS('public/conf.js', 'publish/' + idx) )
@@ -342,56 +359,72 @@ function publishGame(gameName)
 
       minifyJs(minifyJsArray, 'publish/' + idx + '/game.min.js')
 
-      var md5_conf = hex_md5(fs.readFileSync('publish/' + idx + '/conf.js').toString())
-      var md5_start = hex_md5(fs.readFileSync('publish/' + idx + '/start.js').toString())
-      var md5_cocos = hex_md5(fs.readFileSync('publish/' + idx + '/cocos.min.js').toString())
-      var md5_public = hex_md5(fs.readFileSync('publish/' + idx + '/public.min.js').toString())
-      var md5_game = hex_md5(fs.readFileSync('publish/' + idx + '/game.min.js').toString())
-      
-      //自定义加载方式  缓存public.min.js
-      var appendHtml = 
-      '<script type="text/javascript">' + '\n' +
-      'var ua = navigator.userAgent.toLowerCase();' + '\n' +
-      'var isWeixin = ua.indexOf("micromessenger") != -1;' + '\n' +
-      'var isAndroid = ua.indexOf("android") != -1;' + '\n' +
-      'var isIos = (ua.indexOf("iphone") != -1) || (ua.indexOf("ipad") != -1);' + '\n' +
-      'if (!isWeixin) {' + '\n' +
-      '    alert("请在微信客户端打开链接！");' + '\n' +
-      '    var opened = window.open("about:blank", "_self");' + '\n' +
-      '    opened.opener = null;' + '\n' +
-      '    opened.close();' + '\n' +
-      '}' + '\n' +
-      '</script>' + '\n' +
-      '<script src="conf.js?v=' + md5_conf + '"></script>' + '\n' +
-      '<script src="start.js?v=' + md5_start + '"></script>' + '\n' +
-      '<script type="text/javascript">' + '\n' +
-          // 'var resPath2Md5Map = ' + JSON.stringify(resPath2Md5Map) + '\n' +
+      var md5_conf
+      var md5_start
+      var md5_cocos
+      var md5_public
+      var md5_game
+      // 这里不做延迟的话会提示找不到文件
+      md5_conf = hex_md5(fs.readFileSync('publish/' + idx + '/conf.js').toString())
+      md5_start = hex_md5(fs.readFileSync('publish/' + idx + '/start.js').toString())
+      md5_cocos = hex_md5(fs.readFileSync('publish/' + idx + '/cocos.min.js').toString())
+      setTimeout(() => {
+        md5_public = hex_md5(fs.readFileSync('publish/' + idx + '/public.min.js', 'utf8'))
+        md5_game = hex_md5(fs.readFileSync('publish/' + idx + '/game.min.js').toString())
+
+        console.log('md5_conf  MD5 值:', md5_conf);
+        console.log('md5_start  MD5 值:', md5_start);
+        console.log('md5_cocos  MD5 值:', md5_cocos);
+        console.log('md5_public  MD5 值:', md5_public);
+        console.log('md5_game  MD5 值:', md5_game);
+
+        var appendHtml = 
+        '<script type="text/javascript">' + '\n' +
+        'var ua = navigator.userAgent.toLowerCase();' + '\n' +
+        'var isWeixin = ua.indexOf("micromessenger") != -1;' + '\n' +
+        'var isAndroid = ua.indexOf("android") != -1;' + '\n' +
+        'var isIos = (ua.indexOf("iphone") != -1) || (ua.indexOf("ipad") != -1);' + '\n' +
+        'if (!isWeixin) {' + '\n' +
+        '    alert("请在微信客户端打开链接！");' + '\n' +
+        '    var opened = window.open("about:blank", "_self");' + '\n' +
+        '    opened.opener = null;' + '\n' +
+        '    opened.close();' + '\n' +
+        '}' + '\n' +
+        '</script>' + '\n' +
+        '<script src="conf.js?v=' + md5_conf + '"></script>' + '\n' +
+        '<script src="start.js?v=' + md5_start + '"></script>' + '\n' +
+        '<script type="text/javascript">' + '\n' +
+            // 'var resPath2Md5Map = ' + JSON.stringify(resPath2Md5Map) + '\n' +
           'var publishTime = ' + new Date().getTime() + '\n' +
           'var params = [' + '\n' 
+            
+        for(var i in base64ResParams)
+        {
+          var str = '{"url":"'+base64ResParams[i].url+'","callback":null,"isDependLocalStorage":true,"md5":"' + base64ResParams[i].md5 + '"},' + '\n'
+          appendHtml = appendHtml + str
+        }
 
-      for(var i in base64ResParams)
-      {
-        var str = '{"url":"'+base64ResParams[i].url+'","callback":null,"isDependLocalStorage":true,"md5":"' + base64ResParams[i].md5 + '"},' + '\n'
-        appendHtml = appendHtml + str
-      }
+        appendHtml = appendHtml + '{"url":"cocos.min.js","callback":null,"isDependLocalStorage":false,"md5":"' + md5_cocos + '"},' + '\n' +
+                '{"url":"public.min.js","callback":null,"isDependLocalStorage":false,"md5":"' + md5_public + '"},' + '\n' +
+                '{"url":"game.min.js","callback":null,"isDependLocalStorage":false,"md5":"' + md5_game + '"},' + '\n' +
+            ']' + '\n' +
+            'loadJSArray(params)' + '\n' +
+        '</script>' + '\n' +
+        '</body>' + '\n' +
+        '</html>'
+        
+        // var appendHtml = '<script src="start.js?v=' + md5_start + '"></script>' + '\n' +
+        // '<script src="cocos.min.js?v=' + md5_cocos + '"></script>' + '\n' +
+        // '<script src="public.min.js?v=' + md5_public + '"></script>' + '\n' +
+        // '<script src="game.min.js?v=' + md5_game + '"></script>' + '\n' +
+        // '</body>' + '\n' +
+        // '</html>'
+        fs.appendFileSync('publish/' + idx + '/index.html',appendHtml)
+        return gameName.substring(gameName.split(segX)[0].length+1) + ':success '
+      }, 1000); 
       
-      appendHtml = appendHtml + '{"url":"cocos.min.js","callback":null,"isDependLocalStorage":false,"md5":"' + md5_cocos + '"},' + '\n' +
-              '{"url":"public.min.js","callback":null,"isDependLocalStorage":false,"md5":"' + md5_public + '"},' + '\n' +
-              '{"url":"game.min.js","callback":null,"isDependLocalStorage":false,"md5":"' + md5_game + '"},' + '\n' +
-          ']' + '\n' +
-          'loadJSArray(params)' + '\n' +
-      '</script>' + '\n' +
-      '</body>' + '\n' +
-      '</html>'
-
-      // var appendHtml = '<script src="start.js?v=' + md5_start + '"></script>' + '\n' +
-      // '<script src="cocos.min.js?v=' + md5_cocos + '"></script>' + '\n' +
-      // '<script src="public.min.js?v=' + md5_public + '"></script>' + '\n' +
-      // '<script src="game.min.js?v=' + md5_game + '"></script>' + '\n' +
-      // '</body>' + '\n' +
-      // '</html>'
-      fs.appendFileSync('publish/' + idx + '/index.html',appendHtml)
-      return gameName.substring(gameName.split(segX)[0].length+1) + ':success '
+      //自定义加载方式  缓存public.min.js
+      
     }
     catch(e)
     {
